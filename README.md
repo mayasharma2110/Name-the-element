@@ -1,6 +1,6 @@
 # Keep Riding
 
-[Link to live project.] (https://mayasharma2110.github.io/.../)
+[Link to live project.](https://mayasharma2110.github.io/.../)
 
 This is a website for a chemistry quiz.  
 
@@ -198,7 +198,7 @@ are used throughout the website.
 
 ## Testing
 
-#### Manual Testing
+### Manual Testing
 
 ### Online Validation
 
