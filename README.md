@@ -1,6 +1,6 @@
-# Keep Riding
+# Name the Element
 
-[Link to live project.](https://mayasharma2110.github.io/.../)
+[Link to live project.](https://mayasharma2110.github.io/Name-the-element/)
 
 This is a website for a chemistry quiz.  
 
@@ -22,8 +22,9 @@ Mockups:
     * [User Goals](#user-goals)
   * [Scope](#scope)
   * [Structure](#structure)
-   * [Wireframes Page1](#wireframes-page1)
-   * [Wireframes Page2](#wireframes-page2)
+   * [Wireframes Introduction](#wireframes-introduction)
+   * [Wireframes Quiz](#wireframes-quiz)
+* [Wireframes Feedback](#wireframes-feedback)
    * [Wireframes Comments](#wireframes-comments)
   * [Skeleton](#skeleton)
     * [Colours](#colours)
@@ -58,25 +59,33 @@ Mockups:
 
 #### First Time Visitor Goals
 
-* As a first time user...
+* As a first time user, I want the instructions to be clear for the quiz.
 
-* As a first time user...
+* As a first time user, I want to see an example question of the quiz before I start the game.
 
-* As a first time user...
+* As a first time user, I want to be provided with clear feedback of how I am progressing during the quiz and also at the end.
+
+* As a first time user, I want to have fun playing the game and learn new facts.
+
+* As a first time user, I want to be able to from a range of difficulty levels depending on my knowledge of chemistry.
+
+* As a first time user, I want to be able to start the current quiz questions again.
+
+* As a first time user, I want to be able to go back to the home page and re-select the number of questions and/or the difficulty level.
 
 #### Returning Visitor Goals
 
-* As a returning user...
+* As a returning user, I want the to achieve many of the same goals as a first time visitor.
 
-* As a returning user...
+* As a returning user, I want to be able to select the number of questions the quiz will give me.
 
-* As a returning user...
+* As a returning user, I want to be able to choose another difficulty level depending on my knowledge level of chemistry and how well I did on the quiz on my first attempt.
 
 #### Frequent User Goals
 
-* As a frequent user...
+* As a frequent user, I want to add a timer to the quiz to challenge myself further.
 
-* As a frequent user...
+* As a frequent user I want the to achieve many of the same goals as a first time visitor and a returning visitor.
 
 ### Strategy
 
@@ -98,47 +107,61 @@ Key features to be included based on user stories are:
 
 * Responsive website on mobile, tablet and laptop size devices.
 
-* Interactive elements: 
-  * Navbar becomes a burger menu on mobile.
+* Add more features...
 
 ### Structure
 
-All pages of the website will have a consistent navigation bar - which collapses when viewed on a small screen.
+All pages of the website will have a consistent navigation bar.
 
 The website will use bootstrap grids to make the layout responsive to different devices and screen sizes.
 
+Add more on structure...
 ### Skeleton
 
-I used Balsamiq to make the wireframes for this project. The website was designed to have x pages - xxx, xxx and xxx.
+I used Balsamiq to make the wireframes for this project. The website was designed to have 3 pages - Introduction (home), Quiz and Feedback.
 The wireframes were created for all pages for phone, tablet and desktop devices.
 
-#### Wireframes Page1
+#### Wireframes Introduction
 
 Mobile
 
-![Page1 Phone Wireframes](assets/wireframes/page1-phone.PNG)  
+![Introduction Phone Wireframes](assets/wireframes/introduction-phone.PNG)  
 
 Tablet
 
-![Page1 Tablet Wireframes](assets/wireframes/page1-tablet.PNG)
+![Introduction Tablet Wireframes](assets/wireframes/introduction-tablet.PNG)
 
 Desktop
 
-![Page1 Desktop Wireframes](assets/wireframes/page1-desktop.PNG)  
+![Introduction Desktop Wireframes](assets/wireframes/introduction-desktop.PNG)  
 
-#### Wireframes Page2
+#### Wireframes Quiz
 
 Mobile
 
-![Page2 Phone Wireframes](assets/wireframes/page2-phone.PNG)  
+![Quiz Phone Wireframes](assets/wireframes/quiz-phone.PNG)  
 
 Tablet
 
-![Page2 Wireframes](assets/wireframes/page2-tablet.PNG) 
+![Quiz Wireframes](assets/wireframes/quiz-tablet.PNG) 
 
 Desktop
 
-![Page2 Desktop Wireframes](assets/wireframes/page2-desktop.PNG) 
+![Quiz Desktop Wireframes](assets/wireframes/quiz-desktop.PNG) 
+
+#### Wireframes Feedback
+
+Mobile
+
+![Feedback Phone Wireframes](assets/wireframes/feedback-phone.PNG)  
+
+Tablet
+
+![Feedback Tablet Wireframes](assets/wireframes/feedback-tablet.PNG)
+
+Desktop
+
+![Feedback Desktop Wireframes](assets/wireframes/feedback-desktop.PNG)  
 
 #### Wireframes Comments
 
@@ -159,9 +182,6 @@ Please not there are a few changes to the final site since the wireframes were m
 
 * Responsive on mobile, tablet and laptop size devices.
 
-* Interactive elements:
-  * Navbar becomes a burger menu on mobile.
-
 
 ### Features Left to Implement
 
@@ -179,7 +199,6 @@ Please not there are a few changes to the final site since the wireframes were m
 
 * [Bootstrap Version 4.1.3](https://getbootstrap.com/docs/4.1/getting-started/download/)
   * Used grid layout to ensure the content was responsive to different device sizes (mobile, tablet and laptop).
-  * Used to that the navbar could collapse when viewed on small screens but expand on medium and larger size screens.
 
 * [Gitpod](https://www.gitpod.io/) - used to write the code for the website.
 
@@ -203,7 +222,6 @@ are used throughout the website.
 ### Online Validation
 
 * I checked the website loads and responds as expected on Google Chrome, Microsoft Edge and Internet Explorer browsers.  
-I specifically checked the navbar and carousel work as expected on these browsers also.
 
 * Used chrome developer tools and [responsinator](https://www.responsinator.com/) to check responsiveness on mobile, tablet and laptop devices.  
 I also checked the website on my HP 15 inch laptop, Philips 20 inch monitor and Sony smartphone.
