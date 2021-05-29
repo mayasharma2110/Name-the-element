@@ -71,7 +71,8 @@ Mockups:
 
 * As a first time user, I want to be able to start the current quiz questions again.
 
-* As a first time user, I want to be able to go back to the home page and re-select the number of questions and/or the difficulty level.
+* As a first time user, I want to be able to go back to the home page and re-select the number of questions and/or 
+the difficulty level.
 
 #### Returning Visitor Goals
 
@@ -79,7 +80,8 @@ Mockups:
 
 * As a returning user, I want to be able to select the number of questions the quiz will give me.
 
-* As a returning user, I want to be able to choose another difficulty level depending on my knowledge level of chemistry and how well I did on the quiz on my first attempt.
+* As a returning user, I want to be able to choose another difficulty level depending on my knowledge level of chemistry and 
+how well I did on the quiz on my first attempt.
 
 #### Frequent User Goals
 
@@ -107,7 +109,27 @@ Key features to be included based on user stories are:
 
 * Responsive website on mobile, tablet and laptop size devices.
 
-* Add more features...
+* The home page will show an image example of a question and the multiple choice options for the user to choose from.
+
+* The home page will contain radio buttons for the user to select how many question they want their quiz to contain, 
+the difficulty level of the quiz they want and if they want it to be a timed quiz or not.
+
+* The home page will contain a start button for the user to start the quiz using the options they selected above.
+
+* The quiz page will display clear feedback to the user after each question in terms of text and colour.
+
+* The quiz page will display a users score/progress in terms of a progress bar 
+with diffierent colours to represent correct/incorrect answers.
+
+* The quiz page will clearly display what question the user is on, how many they have answered and how many are left to complete.
+
+* The quiz page will also have a buttons for the user to progress to the next question, 
+restart the current quiz questions again or to the home page and reselect the options for their quiz.
+
+* The feedback page will show all the questions in the quiz, along with if the user got this correct or not.
+If correct it will display the correct answer and if wrong it will display the users answer and the correct one.
+
+* The feedback page will have a play again button to take the user to the home page.
 
 ### Structure
 
@@ -115,7 +137,21 @@ All pages of the website will have a consistent navigation bar.
 
 The website will use bootstrap grids to make the layout responsive to different devices and screen sizes.
 
-Add more on structure...
+The introduction page will contain an image example of a question and the multiple choice options for the user to choose from. 
+Below this there will be options for the user to select about the type of quiz they want to play. 
+At the bottom there will be a start quiz button.
+
+The quiz page will contain a bar showing the question the user is currently on, how many have been completed and how many are left to complete.
+Bewlo this will be the question along with 4 multiple choice options, and below a submit button. 
+Below the submit button is where user feedback will be displayed if they answered correctly or not.
+Below any feedback will be the progress bar showing the number of correct and incorrect answers.
+Finally at the bottom there will be 2 buttons to allow the user to reselect their quiz options (go to the home page) or
+to start the current quiz questions again.
+
+The feedback page will contain all the questions in the quiz, along with if the user got this correct or not.
+If correct it will display the correct answer and if wrong it will display the users answer and the correct one.
+At the bottom the feedback page will have a play again button to take the user to the home page.
+
 ### Skeleton
 
 I used Balsamiq to make the wireframes for this project. The website was designed to have 3 pages - Introduction (home), Quiz and Feedback.
