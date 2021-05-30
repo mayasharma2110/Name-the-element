@@ -1,0 +1,82 @@
+/* Google fonts */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+
+/* General rules - font family, size and colour*/
+
+* {
+    margin: 0; 
+    padding: 0; 
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* font-family: 'Roboto Slab', serif; */
+    color: navy;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+body {
+    /* font-family: 'Montserrat', sans-serif; */
+    color: darkslategrey;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* navbar */
+
+.navbar {
+    background-color: silver;
+    border: 0.2rem solid navy;
+        
+
+}
+
+ .navbar-light .navbar-brand {
+    font-size: 1.8rem;
+    color: navy;
+    /* font-family: 'Roboto Slab', serif;  */
+    font-weight: 600;
+} 
+
+/* navbar hover */
+
+.navbar-light .navbar-brand:hover {
+    text-decoration: dashed underline navy;
+    color: navy; 
+}
+
+/* period table of elements image */
+.periodic-table {
+    width: 90%;
+    margin: 1rem 5% 1rem 5%;
+}
+
+.periodic-table img {
+    width: 100%;
+    border: 0.2px solid navy;
+}
+
+.question-example {
+    width: 90%;
+    margin: 1rem 5% 1rem 5%;
+}
+
+.question-example img {
+    width: 100%;
+    border: 0.2px solid navy;
+}
+
+#introductory-heading {
+    width: 90%;
+    margin: 1rem 5% 1rem 5%;
+}
