@@ -7,8 +7,12 @@ This is a website for a chemistry quiz.
 It is aimed for those who are interested in improving their current chemistry knowledge or learning some more interesting facts. 
 
 Mockups:
-#![Page1 Mockups](assets/mockups/page1.PNG)
-#![Page2 Mockups](assets/mockups/page2.PNG)
+
+#![Home Mockups](assets/mockups/home.PNG)
+
+#![Quiz Mockups](assets/mockups/quiz.PNG)
+
+#![Feedback Mockups](assets/mockups/feedback.PNG)
 
 ## Table of Contents
 
@@ -22,7 +26,7 @@ Mockups:
     * [User Goals](#user-goals)
   * [Scope](#scope)
   * [Structure](#structure)
-   * [Wireframes Introduction](#wireframes-introduction)
+   * [Wireframes Home](#wireframes-home)
    * [Wireframes Quiz](#wireframes-quiz)
 * [Wireframes Feedback](#wireframes-feedback)
    * [Wireframes Comments](#wireframes-comments)
@@ -137,13 +141,14 @@ All pages of the website will have a consistent navigation bar.
 
 The website will use bootstrap grids to make the layout responsive to different devices and screen sizes.
 
-The introduction page will contain an image example of a question and the multiple choice options for the user to choose from. 
+The home page will contain an image example of a question and the multiple choice options for the user to choose from. 
 Below this there will be options for the user to select about the type of quiz they want to play. 
 At the bottom there will be a start quiz button.
 
 The quiz page will contain a bar showing the question the user is currently on, how many have been completed and how many are left to complete.
-Bewlo this will be the question along with 4 multiple choice options, and below a submit button. 
-Below the submit button is where user feedback will be displayed if they answered correctly or not.
+Below this will be the question along with 4 multiple choice options, and below a submit button. 
+Below the submit button is where user feedback will be displayed if they answered correctly or not. 
+Once the user has clicked submit this button will disappear and there will be a next question button in it's place.
 Below any feedback will be the progress bar showing the number of correct and incorrect answers.
 Finally at the bottom there will be 2 buttons to allow the user to reselect their quiz options (go to the home page) or
 to start the current quiz questions again.
@@ -154,22 +159,22 @@ At the bottom the feedback page will have a play again button to take the user t
 
 ### Skeleton
 
-I used Balsamiq to make the wireframes for this project. The website was designed to have 3 pages - Introduction (home), Quiz and Feedback.
+I used Balsamiq to make the wireframes for this project. The website was designed to have 3 pages - Home, Quiz and Feedback.
 The wireframes were created for all pages for phone, tablet and desktop devices.
 
-#### Wireframes Introduction
+#### Wireframes Home
 
 Mobile
 
-![Introduction Phone Wireframes](assets/wireframes/introduction-phone.PNG)  
+![Home Phone Wireframes](assets/wireframes/home-phone.PNG)  
 
 Tablet
 
-![Introduction Tablet Wireframes](assets/wireframes/introduction-tablet.PNG)
+![Home Tablet Wireframes](assets/wireframes/home-tablet.PNG)
 
 Desktop
 
-![Introduction Desktop Wireframes](assets/wireframes/introduction-desktop.PNG)  
+![Home Desktop Wireframes](assets/wireframes/home-desktop.PNG)  
 
 #### Wireframes Quiz
 
@@ -218,12 +223,16 @@ Please not there are a few changes to the final site since the wireframes were m
 
 * Responsive on mobile, tablet and laptop size devices.
 
+* Add to here when complete.
 
 ### Features Left to Implement
 
 * It would be nice to have a larger number of question options for the quiz. 
 
 * This concept could also be expanded to include quizzes for other subjects of interest such as biology and physics.
+
+* If the site had a user sign in capabilities and stored data on users of the quiz 
+this could allow the user to track their progress and also compare to others.
 
 ## Technologies Used
 
@@ -252,6 +261,20 @@ are used throughout the website.
 * [Am I Responsive](http://ami.responsivedesign.is/#) - used for the mockups of the website on different devices.
 
 ## Testing
+
+structure:
+
+Expected -Feature is expected to do X why the user does Y
+
+Testing - Tested the feature by doing Y
+
+Result - The feature did not respond due to A,B,C
+
+or
+
+Result - The feature acted as normally and it did Y
+
+Fix - I did Z to the code because something was missing
 
 ### Manual Testing
 
