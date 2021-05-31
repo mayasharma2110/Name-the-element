@@ -37,7 +37,8 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="question-example">
-                    <img src="assets/images/question-example.png" alt="An example of a question in the quiz">
+                    <!-- <img src="assets/images/question-example.png" alt="An example of a question in the quiz"> -->
+                    <img src="assets/images/periodic-table-of-elements.png" alt="The periodic table of elements">
                 </div>   
             </div>
         </div>
@@ -52,8 +53,7 @@
 
     <script src="assets/js/myscript.js"></script>
 
-    <form action="quiz.html" method="POST" class="user-options">
-    <!-- <div class="user-options"> -->
+    <form action="quiz.html" class="user-options" id="user-options">
 
         <p>Number of questions:</p>
         <input id="10" type="radio" name="number_of_questions" value="10" required>
@@ -72,19 +72,14 @@
         <label for="hard">Hard</label>
 
         <p>Add a timer - 1 minuter per question:</p>
-        <input id="no" type="radio" name="timer" value="no" required checked>
+        <input id="no" type="radio" name="timer_yn" value="no" required checked>
         <label for="no">No</label>
-        <input id="yes" type="radio" name="timer" value="yes">
+        <input id="yes" type="radio" name="timer_yn" value="yes">
         <label for="yes">Yes</label>
 
-        <p>This is a test</p>
-        <input type="text" id="username" name="username">
-
         <br>
-        <input type="submit" class="start_quiz" value="Start Quiz!">
-        <!-- <a class="start_quiz" href="quiz.html">Start Quiz!</a> -->
+        <input type="submit" class="start_quiz" id= "start_quiz" value="Start Quiz!">
 
-    <!-- </div>            -->
     </form>
 
 	
