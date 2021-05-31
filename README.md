@@ -407,8 +407,8 @@ on your own repository to view/edit as you wish.
 
 ### Media
 
-* I found the following images online from [website link](https://www.pexels.com/): 
-  * img1 - owner xxxx xxxx [image link here](https://www.pexels.com/photo/white-horse-running-on-green-field-1996337/)
+* I found the following images online from [Science Notes](https://sciencenotes.org/): 
+  * periodic-table-of-elements - owner Science Notes [image link here](https://sciencenotes.org/printable-periodic-table/)
  
 * Please note I did minor editing (cropping only) to some of these photos.
  

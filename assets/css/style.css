@@ -37,8 +37,6 @@ body {
 .navbar {
     background-color: silver;
     border: 0.2rem solid navy;
-        
-
 }
 
  .navbar-light .navbar-brand {
@@ -76,7 +74,23 @@ body {
     border: 0.2px solid navy;
 }
 
-#introductory-heading {
+.introductory-text {
     width: 90%;
     margin: 1rem 5% 1rem 5%;
+}
+
+/* user options */
+.user-options {
+    width: 90%;
+    margin: 1rem 5% 1rem 5%;
+}
+
+/* add some margins/padding to inputs and labels */
+
+/* add some margins/padding to submit button */
+.start_quiz {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
 }
