@@ -74,7 +74,7 @@ body {
     border: 0.2px solid navy;
 }
 
-.introductory-text {
+#introduction {
     width: 90%;
     margin: 1rem 5% 1rem 5%;
 }
@@ -93,4 +93,11 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     align-items: center;
+}
+
+/* quiz */
+#quiz {
+    display: none;
+    width: 90%;
+    margin: 1rem 5% 1rem 5%;
 }
