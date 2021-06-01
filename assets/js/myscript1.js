@@ -121,10 +121,10 @@ let form1=document.getElementById("user-options");
 form1.addEventListener('submit',handleSumbit);
 
 // user submits an answer to a question
-function submit_ans(event){
+// function submit_ans(event){
 
     // prevent default
-    event.preventDefault();
+    // event.preventDefault();
 
     // get user input and save as variables;
     // var radio1 = document.getElementsByName('number_of_questions');
@@ -143,7 +143,7 @@ function submit_ans(event){
 
     // update progress bar
 
-};
+// };
 
-let submit_ans=document.getElementById("submit_answer");
-submit_ans.addEventListener('submit',handleSumbit);
+// let submit_ans=document.getElementById("submit_answer");
+// submit_ans.addEventListener('submit',handleSumbit);
