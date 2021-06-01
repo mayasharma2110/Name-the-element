@@ -42,14 +42,19 @@ function handleSumbit(event){
         break;
         }
     }
+    console.log(timer);
+
+    // export number, difficulty and timer variables to be used in myscript2/quiz.html
+    // export number;
+    // export difficulty;
+    // export timer;
 
     // submit form
-    form1.submit();
+    //form1.submit();
+
 };
 
 let form1=document.getElementById("user-options");
-// form1 is not on every html page so check before assigning it an event listener
-if (document.body.contains(form1)) {
-    form1.addEventListener('submit',handleSumbit);
-};
+form1.addEventListener('submit',handleSumbit);
+
     
