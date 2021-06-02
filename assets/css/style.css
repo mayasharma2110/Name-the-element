@@ -44,7 +44,7 @@ body {
     color: navy;
     /* font-family: 'Roboto Slab', serif;  */
     font-weight: 600;
-} 
+}
 
 /* navbar hover */
 
@@ -88,7 +88,7 @@ body {
 /* add some margins/padding to inputs and labels */
 
 /* add some margins/padding to submit button */
-.start_quiz {
+#start_quiz {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
@@ -100,4 +100,24 @@ body {
     display: none;
     width: 90%;
     margin: 1rem 5% 1rem 5%;
+}
+
+/* submit ans/next question buttons */
+#submit_answer {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+#next_question {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+/* current_question */
+#current_question span {
+    color: red;
 }
