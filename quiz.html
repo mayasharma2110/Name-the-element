@@ -46,40 +46,29 @@
         </div>
     </div>
 
-    <div id="introduction">
-        <div id="introductory-heading">
-            <h2>Welcome to this quiz! Some introductory text...</h2>
+    <div id="quiz">
+        <div id="current_question">
         </div>
-
-        <form action="quiz.html" class="user-options" id="user-options">
-
-            <p>Number of questions:</p>
-            <input id="5" type="radio" name="number_of_questions" value="5" required>
-            <label for="5">5</label>
-            <input id="10" type="radio" name="number_of_questions" value="10" checked>
-            <label for="10">10</label>
-            <input id="15" type="radio" name="number_of_questions" value="15">
-            <label for="15">15</label>
-            
-
-            <p>Difficulty level:</p>
-            <input id="easy" type="radio" name="difficulty_level" value="easy" required>
-            <label for="easy">Easy</label>
-            <input id="meduim" type="radio" name="difficulty_level" value="medium" checked>
-            <label for="meduim">Meduim</label>
-            <input id="hard" type="radio" name="difficulty_level" value="hard">
-            <label for="hard">Hard</label>
-
-            <p>Add a timer - 1 minute per question:</p>
-            <input id="no" type="radio" name="timer_yn" value="no" required checked>
-            <label for="no">No</label>
-            <input id="yes" type="radio" name="timer_yn" value="yes">
-            <label for="yes">Yes</label>
-
+        <br>
+        <div id="question_text"></div>
+        <br>
+        <form class="user_picks" id="user_picks">
+            <div id="options"></div>
             <br>
-            <input type="submit" class="start_quiz" id= "start_quiz" value="Start Quiz!">
-
+            <input type="submit" class="submit_answer" id= "submit_answer" value="Submit!">
+            <br>
         </form>
+        <div id="next_question">
+            <button>Next Question</button>
+        </div>
+        <div id="user_feedback"></div>
+        <br>
+        <div id="progress_bar">
+            Progress bar here
+        </div>
+        <div id="other">
+            reselect/restart buttons
+        </div>
 
     </div>
 
