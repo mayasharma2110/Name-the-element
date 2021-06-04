@@ -89,6 +89,11 @@ function currentQuestionBar() {
         <div>11</div> <div>12</div> <div>13</div> <div>14</div> <div>15</div>
         `; 
     }
+    //add background color to question no 1
+    $("#current_question").children().first().addClass("current_question_color");
+    // let currentQ=$("#current_question").children().first();
+    // currentQ.addClass("current_question_color");
+
     // document.getElementById("current_question").innerHTML=`
     //     <div>1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div>
     //     `;
