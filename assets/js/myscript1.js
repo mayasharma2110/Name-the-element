@@ -252,9 +252,10 @@ function sumbittedAnswer(event){
     };
 
     // update current question bar 
-    // updateCurrentQuestionBar();
+    updateCurrentQuestionBar();
 
-    // show next question button and remove submit button
+    // show next question button and hide submit button
+    showNextQuestionButton();
 
     // check answer and give feedback, also update progress bar based on userResult
     displayFeedback(user_ans);
@@ -265,6 +266,21 @@ let userSubmit=document.getElementById("user_picks");
 if (document.body.contains(userSubmit)) {
     userSubmit.addEventListener('submit',sumbittedAnswer);
 };
+
+function updateCurrentQuestionBar() {
+    console.log(currentQuestionNumber);;
+    console.log(currentQuestionNumberIndex);
+
+    // console.log($("#current_question").children()[currentQuestionNumberIndex].html());
+    // $("#current_question").children()[currentQuestionNumberIndex].removeClass("current_question_color").addClass("completed_question_color");
+    // let test1=$("#current_question").children()[currentQuestionNumberIndex];
+    // test1.removeClass("current_question_color").addClass("completed_question_color");
+}
+
+function showNextQuestionButton(){
+    $("#next_question").children().removeClass("hide").addClass("show");
+    $("#submit_answer").removeClass("show").addClass("hide"); 
+}
 
 // next question event listener
 // update current question bar
