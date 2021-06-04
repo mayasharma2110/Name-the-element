@@ -98,7 +98,6 @@ body {
 
 /* quiz */
 #quiz {
-    /* display: none; */
     width: 90%;
     margin: 1rem 5% 1rem 5%;
 }
@@ -148,4 +147,18 @@ body {
 
 .completed_question_color {
     background:#aad9b8;
+}
+
+/* progress bar */
+.bg-correct {
+    background:#aad9b8;
+}
+
+.bg-incorrect {
+    background:#f7aac0;
+}
+
+/* next question button - only display once user has submitted an answer*/
+#next_question button {
+    display: none;
 }

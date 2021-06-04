@@ -216,15 +216,23 @@ if (document.body.contains(form1)) {
 function displayFeedback(user_ans) {
 
     // console.log(user_ans);
-
-    if (user_ans===quizQuestions[currentQuestionNumberIndex].correct) {
+    let userResult = user_ans===quizQuestions[currentQuestionNumberIndex].correct;
+    if (userResult) {
         document.getElementById("user_feedback").innerHTML=`Well done you got it correct!`;
-    } else if (user_ans!=quizQuestions[currentQuestionNumberIndex].correct) {
+        updateProgressBarCorrect();
+        // var userRightWrong="Right";
+    } else {
         document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}`;
+        // var userRightWrong="Wrong";
+        updateProgressBarIncorrect();
     }
-
 }
 
+function updateProgressBarCorrect() {
+}
+
+function updateProgressBarIncorrect() {
+}
 
 // user submits an answer to a question
 function sumbittedAnswer(event){
@@ -243,14 +251,13 @@ function sumbittedAnswer(event){
         };
     };
 
-    // check answer and give feedback
-    displayFeedback(user_ans);
-
     // update current question bar 
-
-    // update progress bar
+    // updateCurrentQuestionBar();
 
     // show next question button and remove submit button
+
+    // check answer and give feedback, also update progress bar based on userResult
+    displayFeedback(user_ans);
 
 };
 
