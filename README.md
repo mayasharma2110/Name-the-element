@@ -211,11 +211,18 @@ Please not there are a few changes to the final site since the wireframes were m
 ### Surface
 
 #### Colours
+I used the image of the periodic table of elements to get the colours used in this site. 
+I used a muted green (#aad9b8), yellow (#fcf9bf) and red (#f7aac0) from this image using the Toggle color picker 
+within chrome developer tools. 
+For the navbar and headings text I picked navy and other text uses darkslategrey.
 
 #### Typography
 
 #### Imagery
-
+I picked a image of the periodic table of elements as credited in the credits - media
+section of this readme. The site mentioned has many images available but 
+I picked this as it is colourful, it is also has muted colours which makes this 
+a website that a user of any age would like to use. 
 
 ## Features
 
