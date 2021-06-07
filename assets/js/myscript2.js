@@ -1,9 +1,6 @@
 // SET UP GAME
 
-let quizQuestions;
-
 // START ON QUESTION 1 OF GAME
-
 let currentQuestionNumber=1;
 let currentQuestionNumberIndex=0;
 
@@ -76,7 +73,7 @@ let questionsHard=[
 
 //PREPARE GAME AND SHOW 1ST QUESTION
 
-prepareGame();
+let quizQuestions=prepareGame();
 
 function prepareGame() {
 
@@ -84,10 +81,12 @@ function prepareGame() {
     currentQuestionBar();
 
     // get quiz questions
-    getQuizQuestions();
+    let quizQuestions = getQuizQuestions();
 
     // display question and options
-    displayQuestion();
+    displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex);
+
+    return quizQuestions;
     
 };
 
@@ -120,32 +119,22 @@ function currentQuestionBar() {
 
 // get quiz questions
 function getQuizQuestions() {
-    // if (localStorage.getItem("difficulty")=="easy") {
-    //     quizQuestions=questionsEasy.slice(0,localStorage.getItem("number"));    
-    // }
-    // else if (localStorage.getItem("difficulty")=="medium") {
-    //     quizQuestions=questionsMedium.slice(0,localStorage.getItem("number")); 
-    // }
-    // else if (localStorage.getItem("difficulty")=="hard") {
-    //     quizQuestions=questionsHard.slice(0,localStorage.getItem("number")); 
-    // }
     if (difficulty=="easy") {
-        //randomize order of questions
-        quizQuestions=questionsEasy.slice(0,number);    
+        let questionsEasy1 = questionsEasy.sort(() => Math.random() - 0.5);//randomize order of questions
+        return questionsEasy1.slice(0,number);
     }
     else if (difficulty=="medium") {
-        //randomize order of questions
-        quizQuestions=questionsMedium.slice(0,number); 
+        let questionsMedium1 = questionsMedium.sort(() => Math.random() - 0.5);//randomize order of questions
+        return questionsMedium1.slice(0,number); 
     }
     else if (difficulty=="hard") {
-        //randomize order of questions
-        quizQuestions=questionsHard.slice(0,number); 
+        let questionsHard1 = questionsHard.sort(() => Math.random() - 0.5);//randomize order of questions
+        return questionsHard1.slice(0,number); 
     }
-    // console.log(quizQuestions[0].question);
 };
 
 // display question and options
-function displayQuestion() {
+function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex) {
 
     // document.getElementById("question_text").innerHTML=`Question ${currentQuestionNumber}`;
     document.getElementById("question_text").innerHTML=`Question ${currentQuestionNumber}: ${quizQuestions[currentQuestionNumberIndex].question}`;
@@ -174,26 +163,34 @@ function sumbittedAnswer(event){
     let userAnswer=$('[name="option"]:checked')[0].value
 
     // update current question bar 
-    updateCurrentQuestionBar();
+    updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
 
-    // show next question button and hide submit button
-    showNextQuestionButton();
 
     // check answer and give feedback, also update progress bar based on userResult
     displayFeedback(userAnswer);
 
+    // IF NOT LAST QUESTION
+
+    // show next question button and hide submit button
+    showNextQuestionButton();
+
+    // IF LAST QUESTION
+
+    // show play again button and hide submit button
+    // showPlayAgainButton();
+    // display overall feedback to user
+    // overallFeedback();
+
 };
 
-function updateCurrentQuestionBar() {
+let userSubmit=document.getElementById("user_picks");
+userSubmit.addEventListener('submit',sumbittedAnswer);
+
+function updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex) {
     // console.log(currentQuestionNumber);;
     // console.log(currentQuestionNumberIndex);
     $("#current_question").children().first().removeClass("current_question_color").addClass("completed_question_color");
 }
-
-let userSubmit=document.getElementById("user_picks");
-if (document.body.contains(userSubmit)) {
-    userSubmit.addEventListener('submit',sumbittedAnswer);
-};
 
 function showNextQuestionButton(){
     $("#next_question").children().removeClass("hide").addClass("show");
@@ -214,71 +211,53 @@ function displayFeedback(userAnswer) {
 }
 
 function updateProgressBarCorrect() {
-    if (number==5) {
-        let percentadd=1/number*100;
-        let percentCorrect=currentCorrect+percentadd;
-        document.getElementById("progress_bar").innerHTML=`
-            <div class="progress">
-                <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>`;
-    }
-    else if (number==10) {
-        let percentadd=1/number*100;
-        let percentCorrect=currentCorrect+percentadd;
-        document.getElementById("progress_bar").innerHTML=`
-            <div class="progress">
-                <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>`;
-    }
-    else if (number==15) {
-        let percentadd=1/number*100;
-        let percentCorrect=currentCorrect+percentadd;
-        document.getElementById("progress_bar").innerHTML=`
-            <div class="progress">
-                <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>`;
-    }
+    let percentadd=1/number*100;
+    let percentCorrect=currentCorrect+percentadd;
+    document.getElementById("progress_bar").innerHTML=`
+        <div class="progress">
+            <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>`;
 }
 
 function updateProgressBarIncorrect() {
-    if (number==5) {
-        let percentadd=1/number*100;
-        let percentIncorrect=currentIncorrect+percentadd;
-        document.getElementById("progress_bar").innerHTML=`
-            <div class="progress">
-                <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>`;
-    }
-    else if (number==10) {
-        let percentadd=1/number*100;
-        let percentIncorrect=currentIncorrect+percentadd;
-        document.getElementById("progress_bar").innerHTML=`
-            <div class="progress">
-                <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>`;
-    }
-    else if (number==15) {
-        let percentadd=1/number*100;
-        let percentIncorrect=currentIncorrect+percentadd;
-        document.getElementById("progress_bar").innerHTML=`
-            <div class="progress">
-                <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>`;
-    }
+    let percentadd=1/number*100;
+    let percentIncorrect=currentIncorrect+percentadd;
+    document.getElementById("progress_bar").innerHTML=`
+        <div class="progress">
+            <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>`;
 }
 
+//USER CLICKS NEXT QUESTION
+function nextQuestion(event){
 
-// next question event listener - if last question dont show next question button
-    // update current question bar
-    // show next question
-    // redisplay submit button and remove next question button
-// submit button event listener - if last question dont show next question button, this will be play again instead, also will show overall feedback to user
+    // increment variable values
+    currentQuestionNumber++;
+    currentQuestionNumberIndex++;
+    console.log(currentQuestionNumber);
 
+    // update current question bar 
+    // updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
 
+    // display question and options
+    displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex);
+
+    // IF NOT LAST QUESTION
+
+    // show next submit button and hide next question button
+    // showSubmitButton();
+
+    // IF LAST QUESTION
+
+    // show play again button and hide submit button
+    // showPlayAgainButton();
+    // display overall feedback to user
+    // overallFeedback();
+
+};
+
+let userNextQuestion=document.getElementById("next_question").children[0];
+userNextQuestion.addEventListener('click',nextQuestion);
 

@@ -421,7 +421,7 @@ on your own repository to view/edit as you wish.
  
 ### Acknowledgments
 
-* Code Institute for teaching me the basics of HTML, CSS, bootstrap, JavaScript and jQuery to allow me to create this website.
+* Code Institute for teaching me the basics of HTML, CSS, Bootstrap, JavaScript and jQuery to allow me to create this website.
 
 * My mentor Antonio Rodriguez who helped provide feedback on this website and improvements that could be made.
 

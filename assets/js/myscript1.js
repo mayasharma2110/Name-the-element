@@ -24,6 +24,4 @@ function startGame(event){
 };
 
 let form1=document.getElementById("user-options");
-if (document.body.contains(form1)) {
-    form1.addEventListener('submit',startGame);
-};
+form1.addEventListener('submit',startGame);
