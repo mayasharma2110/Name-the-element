@@ -152,7 +152,7 @@ body {
     background:#f7aac0;
 }
 
-/* submit/next question */
+/* submit/next question buttons*/
 .hide {
     display:none;
 }
@@ -160,3 +160,7 @@ body {
 .show {
     display:block;
 }
+
+/* restart/reselect buttons */
+
+/* play again button */
