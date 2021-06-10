@@ -163,7 +163,7 @@ function sumbittedAnswer(event){
     let userAnswer=$('[name="option"]:checked')[0].value
 
     // update current question bar 
-    updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
+    updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
 
 
     // check answer and give feedback, also update progress bar based on userResult
@@ -186,7 +186,7 @@ function sumbittedAnswer(event){
 let userSubmit=document.getElementById("user_picks");
 userSubmit.addEventListener('submit',sumbittedAnswer);
 
-function updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex) {
+function updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex) {
     // console.log(currentQuestionNumber);;
     // console.log(currentQuestionNumberIndex);
     $("#current_question").children().first().removeClass("current_question_color").addClass("completed_question_color");
@@ -238,16 +238,22 @@ function nextQuestion(event){
     currentQuestionNumberIndex++;
     console.log(currentQuestionNumber);
 
+    //clear user feedback
+    clearUserFeedback();
+    
     // update current question bar 
     // updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
 
     // display question and options
+    // console.log("hia");
     displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex);
+    // console.log("hib");
 
     // IF NOT LAST QUESTION
 
     // show next submit button and hide next question button
-    // showSubmitButton();
+    // console.log("hi");
+    showSubmitButton();
 
     // IF LAST QUESTION
 
@@ -261,3 +267,19 @@ function nextQuestion(event){
 let userNextQuestion=document.getElementById("next_question").children[0];
 userNextQuestion.addEventListener('click',nextQuestion);
 
+function clearUserFeedback() {
+    $("#user_feedback").html("");
+}
+
+function updateCurrentQuestionBar(currentQuestionNumber, currentQuestionNumberIndex) {
+    // add background color to question no x
+    // get last element with green background and find next sibling to change its colour
+    // $("#current_question").children()[currentQuestionNumberIndex].addClass("current_question_color");
+    // $("#current_question").children().first().addClass("current_question_color");
+}
+
+function showSubmitButton() {
+    // console.log("hi1");
+    $("#next_question").children().removeClass("show").addClass("hide");
+    $("#submit_answer").removeClass("hide").addClass("show"); 
+}
