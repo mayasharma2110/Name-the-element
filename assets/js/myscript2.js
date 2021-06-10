@@ -187,9 +187,7 @@ let userSubmit=document.getElementById("user_picks");
 userSubmit.addEventListener('submit',sumbittedAnswer);
 
 function updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex) {
-    // console.log(currentQuestionNumber);;
-    // console.log(currentQuestionNumberIndex);
-    $("#current_question").children().first().removeClass("current_question_color").addClass("completed_question_color");
+    $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
 }
 
 function showNextQuestionButton(){
@@ -211,8 +209,8 @@ function displayFeedback(userAnswer) {
 }
 
 function updateProgressBarCorrect() {
-    let percentadd=1/number*100;
-    let percentCorrect=currentCorrect+percentadd;
+    // let percentadd=1/number*100;
+    percentCorrect=currentCorrect+1/number*100;
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -221,8 +219,8 @@ function updateProgressBarCorrect() {
 }
 
 function updateProgressBarIncorrect() {
-    let percentadd=1/number*100;
-    let percentIncorrect=currentIncorrect+percentadd;
+    // let percentadd=1/number*100;
+    percentIncorrect=currentIncorrect+1/number*100;
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -242,17 +240,14 @@ function nextQuestion(event){
     clearUserFeedback();
     
     // update current question bar 
-    // updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
+    updateCurrentQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
 
     // display question and options
-    // console.log("hia");
     displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex);
-    // console.log("hib");
 
     // IF NOT LAST QUESTION
 
     // show next submit button and hide next question button
-    // console.log("hi");
     showSubmitButton();
 
     // IF LAST QUESTION
@@ -272,14 +267,10 @@ function clearUserFeedback() {
 }
 
 function updateCurrentQuestionBar(currentQuestionNumber, currentQuestionNumberIndex) {
-    // add background color to question no x
-    // get last element with green background and find next sibling to change its colour
-    // $("#current_question").children()[currentQuestionNumberIndex].addClass("current_question_color");
-    // $("#current_question").children().first().addClass("current_question_color");
+    $("#current_question").children().eq(currentQuestionNumberIndex).addClass("current_question_color");
 }
 
 function showSubmitButton() {
-    // console.log("hi1");
     $("#next_question").children().removeClass("show").addClass("hide");
     $("#submit_answer").removeClass("hide").addClass("show"); 
 }
