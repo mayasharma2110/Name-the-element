@@ -120,10 +120,10 @@ the difficulty level of the quiz they want and if they want it to be a timed qui
 
 * The home page will contain a start button for the user to start the quiz using the options they selected above.
 
-* The quiz page will display clear feedback to the user after each question in terms of text and colour.
+* The quiz page will display clear feedback to the user after each question.
 
 * The quiz page will display a users score/progress in terms of a progress bar 
-with diffierent colours to represent correct/incorrect answers.
+with different colours to represent correct/incorrect answers.
 
 * The quiz page will clearly display what question the user is on, how many they have answered and how many are left to complete.
 
@@ -132,6 +132,8 @@ restart the current quiz questions again or to the home page and reselect the op
 
 * The feedback page will show all the questions in the quiz, along with if the user got this correct or not.
 If correct it will display the correct answer and if wrong it will display the users answer and the correct one.
+
+* The feedback page will show how many questions the user answered, the number correct and incorrect (with percentages).
 
 * The feedback page will have a play again button to take the user to the home page.
 
@@ -149,11 +151,12 @@ The quiz page will contain a bar showing the question the user is currently on, 
 Below this will be the question along with 4 multiple choice options, and below a submit button. 
 Below the submit button is where user feedback will be displayed if they answered correctly or not. 
 Once the user has clicked submit this button will disappear and there will be a next question button in it's place.
-Below any feedback will be the progress bar showing the number of correct and incorrect answers.
+Below any feedback will be the progress bar showing the percentage of correct and incorrect answers.
 Finally at the bottom there will be 2 buttons to allow the user to reselect their quiz options (go to the home page) or
 to start the current quiz questions again.
 
-The feedback page will contain all the questions in the quiz, along with if the user got this correct or not.
+The feedback page will show how many questions the user answered, the number correct and incorrect (with percentages). 
+The feedback page will also contain all the questions in the quiz, along with if the user got this correct or not.
 If correct it will display the correct answer and if wrong it will display the users answer and the correct one.
 At the bottom the feedback page will have a play again button to take the user to the home page.
 
@@ -206,7 +209,10 @@ Desktop
 
 #### Wireframes Comments
 
-Please not there are a few changes to the final site since the wireframes were made:
+Please note there are a few changes to the final site since the wireframes were made:
+
+  * The quiz page contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
+  * The feedback page contains the image of the periodic table of elements from the home page.
 
 ### Surface
 
@@ -230,7 +236,24 @@ a website that a user of any age would like to use.
 
 * Responsive on mobile, tablet and laptop size devices.
 
-* Add to here when complete.
+* The home page shows an image of the periodic table of elements and also an image example of a question and the multiple choice options for the user to choose from.
+This makes the purpose of the site clear to the user and lets them know what to expect.
+
+* On the home page the user can pick number of questions and difficulty level.
+The user can pick if there is a timer on the quiz or not. After selecting options the user can start the quiz.
+
+* The quiz page has multiple features:
+  * Contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
+  * Shows the user what question they are on, how many they have completed and how many are left.
+  * Shows the current question and its options, the order of questions is randomized.
+  * Contains submit and next question buttons allowing the user to progress through the quiz questions (only one button is shown at a time).
+  * After submitting an answer for each question the user is provided with feedback in text form.
+  * After submitting an answer for each question the progress bar is updated showing the percentage of correct/incorrect answers so far.
+  * Contains buttons allowing the user to restart the current quiz questions again or to the home page and reselect the options for their quiz.
+
+* At the end of the quiz:
+  * Overall feedback is displayed showing how many questions the user answered, the number correct and incorrect (with percentages).
+  * Play again button which will take the user to the home page.
 
 ### Features Left to Implement
 
