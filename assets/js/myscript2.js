@@ -5,8 +5,8 @@ let currentQuestionNumber=1;
 let currentQuestionNumberIndex=0;
 
 // START PROGRESS BAR ON 0 (CORRECT) and 0 (INCORRECT)
-// let currentCorrect = 0;
-// let currentIncorrect = 0;
+// let numberCorrect = 0;
+// let numberIncorrect = 0;
 let percentIncorrect = 0;
 let percentCorrect = 0;
 
@@ -18,7 +18,7 @@ let timer = localStorage.getItem("timer");
 // ARRAYs TO STORE OBJECTS OF QUESTION DATA, 1 ARRAY FOR EACH DIFFICULTY LEVEL
 
 let questionsEasy=[
-    {question:"The chemical forumla for table salt is soduim ________.",option1:"option1",option2:"option2",option3:"chloride (Cl)",option4:"option4",correct:"chloride (Cl)"},
+    {question:"The chemical forumla for table salt is soduim ________.",option1:"blah",option2:"blah",option3:"chloride (Cl)",option4:"blah",correct:"chloride (Cl)"},
     {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
     {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
     {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
@@ -36,25 +36,25 @@ let questionsEasy=[
 ];
 
 let questionsMedium=[
-    {question:"20% of ________ found in the environment is a result of Amazon rainforest.",option1:"nitrogen (N)",option2:"oxygen (O)",option3:"carbon dioxide (CO2)",option4:"hydrogen (H)",correct:"oxygen (O)"},
+    {question:"20% of ________ found in the environment is a result of Amazon rainforest.",option1:"nitrogen (N)",option2:"carbon diozide (CO2)",option3:"oxygen (O)",option4:"hydrogen (H)",correct:"oxygen (O)"},
     {question:"The only two non-silvery metals are gold and _____",option1:"copper (Cu)",option2:"blah",option3:"blah",option4:"blah",correct:"copper (Cu)"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
-    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"}
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
+    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"}
 ];
 
 let questionsHard=[
-    {question:"Lightning strikes produce ________, which produces the characteristic smell after lightning storms.",option1:"ozone (O3)",option2:"blah",option3:"blah",option4:"blah",correct:"ozone (O3)"},
+    {question:"Lightning strikes produce ________, which produces the characteristic smell after lightning storms.",option1:"blah",option2:"blah",option3:"ozone (O3)",option4:"blah",correct:"ozone (O3)"},
     {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
     {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
     {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
