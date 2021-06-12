@@ -18,57 +18,42 @@ let timer = localStorage.getItem("timer");
 // ARRAYs TO STORE OBJECTS OF QUESTION DATA, 1 ARRAY FOR EACH DIFFICULTY LEVEL
 
 let questionsEasy=[
-    {question:"The chemical forumla for table salt is soduim ________.",option1:"blah",option2:"blah",option3:"chloride (Cl)",option4:"blah",correct:"chloride (Cl)"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"}
+    {question:"The chemical forumla for table salt is soduim ________.",option1:"blah",option2:"blah",option3:"Chloride (Cl)",option4:"blah",correct:"Chloride (Cl)"},
+    {question:"________ is a colorless gas, but when found in liquid or solid state, it is blue in color.",option1:"blah",option2:"blah",option3:"blah",option4:"Oxygen (O)",correct:"Oxygen (O)"},
+    {question:"________ is the most abundant element in universe.",option1:"Hydrogen (H)",option2:"blah",option3:"blah",option4:"blah",correct:"Hydrogen (H)"},
+    {question:"________ is the most abundant element on earth.",option1:"blah",option2:"Oxygen (O)",option3:"blah",option4:"blah",correct:"Oxygen (O)"},
+    {question:"Since ________ is light as compared to air, ________ balloons float easily.",option1:"Helium (He)",option2:"blah",option3:"blah",option4:"blah",correct:"Helium (He)"},
+    {question:"The second most abundant element in the universe is ________. ",option1:"blah",option2:"Helium (He)",option3:"blah",option4:"blah",correct:"Helium (He)"},
+    {question:"The primary use of ________ is for fertilizer production.",option1:"blah",option2:"blah",option3:"blah",option4:"Phosphorus (P)",correct:"Phosphorus (P)"},
+    {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"blah",option3:"blah",option4:"blah",correct:"Nitrogen (N)"},
+    {question:"9000 pencils lead (graphite) can be produced with the _____ found in human body.",option1:"blah",option2:"blah",option3:"Carbon (C)",option4:"blah",correct:"Carbon (C)"},
+    {question:"________ is an element you encounter daily, most often in water and toothpaste.",option1:"blah",option2:"blah",option3:"Fluorine (F)",option4:"blah",correct:"Fluorine (F)"}
 ];
 
 let questionsMedium=[
-    {question:"20% of ________ found in the environment is a result of Amazon rainforest.",option1:"nitrogen (N)",option2:"carbon diozide (CO2)",option3:"oxygen (O)",option4:"hydrogen (H)",correct:"oxygen (O)"},
-    {question:"The only two non-silvery metals are gold and _____",option1:"copper (Cu)",option2:"blah",option3:"blah",option4:"blah",correct:"copper (Cu)"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"}
+    {question:"20% of ________ found in the environment is a result of Amazon rainforest.",option1:"Nitrogen (N)",option2:"Sodium (Na)",option3:"Oxygen (O)",option4:"Hydrogen (H)",correct:"Oxygen (O)"},
+    {question:"The only two non-silvery metals are gold and _____.",option1:"blah",option2:"blah",option3:"blah",option4:"Copper (Cu)",correct:"Copper (Cu)"},
+    {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"blah",option3:"blah",option4:"blah",correct:"Nitrogen (N)"},
+    {question:"_____ dioxide in solid state is known as dry ice.",option1:"blah",option2:"Carbon (C)",option3:"blah",option4:"blah",correct:"Carbon (C)"},
+    {question:"Every _____ atom in your body is likely 13.5 billion years old because they were created at the birth of the universe.",option1:"Hydrogen (H)",option2:"blah",option3:"blah",option4:"blah",correct:"Hydrogen (H)"},
+    {question:"Superfluid _____ defies gravity and climbs on walls",option1:"blah",option2:"Helium (He)",option3:"blah",option4:"blah",correct:"Helium (He)"},
+    {question:"Mars is red because of _____ oxide",option1:"blah",option2:"blah",option3:"blah",option4:"Iron (Fe)",correct:"Iron (Fe)"},
+    {question:"Both osmium and iridium are about two times heavier than _____.",option1:"Lead (Pb)",option2:"blah",option3:"blah",option4:"blah",correct:"Lead (Pb)"},
+    {question:"The most conductive metals are silver, followed by copper and _____.",option1:"blah",option2:"Gold (Au)",option3:"blah",option4:"blah",correct:"Gold (Au)"},
+    {question:"Saturn's largest moon, Titan, is the only moon in the solar system with a dense atmosphere. Its atmosphere consists of over 98% ________.",option1:"blah",option2:"Nitrogen (N)",option3:"blah",option4:"blah",correct:"Nitrogen (N)"}
 ];
 
 let questionsHard=[
-    {question:"Lightning strikes produce ________, which produces the characteristic smell after lightning storms.",option1:"blah",option2:"blah",option3:"ozone (O3)",option4:"blah",correct:"ozone (O3)"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"}
+    {question:"Lightning strikes produce ________, which produces the characteristic smell after lightning storms.",option1:"blah",option2:"blah",option3:"Ozone (O3)",option4:"blah",correct:"Ozone (O3)"},
+    {question:"Mercury & ________ are the only elements found to be in a liquid state at room temperature.",option1:"blah",option2:"blah",option3:"blah",option4:"Bromine (Br)",correct:"Bromine (Br)"},
+    {question:"________ is an exception found to be in a solid state but can be melted into liquid with the warmth present in your hands.",option1:"Gallium",option2:"blah",option3:"blah",option4:"blah",correct:"Gallium"},
+    {question:"________ is the rarest natural element on earth’s crust with only about 28g present.",option1:"blah",option2:"Astatine (At)",option3:"blah",option4:"blah",correct:"Astatine (At)"},
+    {question:"There is enough ________ present on Earth surface to cover entire land area up to human knees.",option1:"Gold (Au)",option2:"blah",option3:"blah",option4:"blah",correct:"Gold (Au)"},
+    {question:"Your car’s airbags are packed with salt ________ azide, which is very toxic",option1:"blah",option2:"Sodium (Na)",option3:"blah",option4:"blah",correct:"Sodium (Na)"},
+    {question:"The heaviest element, in terms of mass per atom, is ________.",option1:"blah",option2:"blah",option3:"blah",option4:"Oganesson (Og)",correct:"Oganesson (Og)"},
+    {question:"The heaviest element, in terms of density, is either Osmium or ________.",option1:"Iridium (Ir)",option2:"blah",option3:"blah",option4:"blah",correct:"Iridium (Ir)"},
+    {question:"The most electronegative element is ________.",option1:"blah",option2:"Fluorine (F)",option3:"blah",option4:"blah",correct:"Fluorine (F)"},
+    {question:"The most electropositive element is ________.",option1:"blah",option2:"blah",option3:"Francium (Fr)",option4:"blah",correct:"Francium (Fr)"}
 ];
 
 //PREPARE GAME AND SHOW 1ST QUESTION
