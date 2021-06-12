@@ -5,8 +5,8 @@ let currentQuestionNumber=1;
 let currentQuestionNumberIndex=0;
 
 // START PROGRESS BAR ON 0 (CORRECT) and 0 (INCORRECT)
-let currentCorrect = 0;
-let currentIncorrect = 0;
+// let currentCorrect = 0;
+// let currentIncorrect = 0;
 let percentIncorrect = 0;
 let percentCorrect = 0;
 
@@ -15,7 +15,7 @@ let number = localStorage.getItem("number");
 let difficulty = localStorage.getItem("difficulty");
 let timer = localStorage.getItem("timer");
 
-// ARRAYs TO STORE OBJECTS OF QUESTION DATA, 1 ARRAY FOR EACH DIFFICULT LEVEL
+// ARRAYs TO STORE OBJECTS OF QUESTION DATA, 1 ARRAY FOR EACH DIFFICULTY LEVEL
 
 let questionsEasy=[
     {question:"The chemical forumla for table salt is soduim ________.",option1:"option1",option2:"option2",option3:"chloride (Cl)",option4:"option4",correct:"chloride (Cl)"},
@@ -38,19 +38,19 @@ let questionsEasy=[
 let questionsMedium=[
     {question:"20% of ________ found in the environment is a result of Amazon rainforest.",option1:"nitrogen (N)",option2:"oxygen (O)",option3:"carbon dioxide (CO2)",option4:"hydrogen (H)",correct:"oxygen (O)"},
     {question:"The only two non-silvery metals are gold and _____",option1:"copper (Cu)",option2:"blah",option3:"blah",option4:"blah",correct:"copper (Cu)"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"},
-    {question:"blah",option1:"blah",option2:"blah",option3:"blah",option4:"blah",correct:"blah"}
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"},
+    {question:"blah",option1:"correct",option2:"blah",option3:"blah",option4:"blah",correct:"correct"}
 ];
 
 let questionsHard=[
@@ -167,7 +167,9 @@ function sumbittedAnswer(event){
 
 
     // check answer and give feedback, also update progress bar based on userResult
-    displayFeedback(userAnswer);
+    [percentCorrect,percentIncorrect] = displayFeedback(userAnswer);
+    // console.log(percentIncorrect);
+    // console.log(percentCorrect);
 
     // IF NOT LAST QUESTION
 
@@ -181,6 +183,7 @@ function sumbittedAnswer(event){
     // display overall feedback to user
     // overallFeedback();
 
+    return [percentCorrect,percentIncorrect];
 };
 
 let userSubmit=document.getElementById("user_picks");
@@ -201,31 +204,41 @@ function displayFeedback(userAnswer) {
     let userResult = userAnswer===quizQuestions[currentQuestionNumberIndex].correct;
     if (userResult) {
         document.getElementById("user_feedback").innerHTML=`Well done you got it correct!`;
-        updateProgressBarCorrect();
+        [percentCorrect, percentIncorrect]=updateProgressBarCorrect(percentCorrect,percentIncorrect);
+        // console.log(percentCorrect);
+        // console.log(percentIncorrect);
+        return [percentCorrect, percentIncorrect];
     } else {
         document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}`;
-        updateProgressBarIncorrect();
+        [percentCorrect, percentIncorrect]=updateProgressBarIncorrect(percentCorrect,percentIncorrect);
+        // console.log(percentCorrect);
+        // console.log(percentIncorrect);
+        return [percentCorrect, percentIncorrect];
     }
 }
 
-function updateProgressBarCorrect() {
-    // let percentadd=1/number*100;
-    percentCorrect=currentCorrect+1/number*100;
+function updateProgressBarCorrect(percentCorrect,percentIncorrect) {
+    percentCorrect=percentCorrect+1/number*100;
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
+    // console.log(percentCorrect);
+    // console.log(percentIncorrect);
+    return [percentCorrect, percentIncorrect];
 }
 
-function updateProgressBarIncorrect() {
-    // let percentadd=1/number*100;
-    percentIncorrect=currentIncorrect+1/number*100;
+function updateProgressBarIncorrect(percentCorrect,percentIncorrect) {
+    percentIncorrect=percentIncorrect+1/number*100;
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
+    // console.log(percentCorrect);
+    // console.log(percentIncorrect);
+    return [percentCorrect, percentIncorrect];
 }
 
 //USER CLICKS NEXT QUESTION
