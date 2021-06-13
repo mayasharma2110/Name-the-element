@@ -124,17 +124,25 @@ function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNu
     // document.getElementById("question_text").innerHTML=`Question ${currentQuestionNumber}`;
     document.getElementById("question_text").innerHTML=`Question ${currentQuestionNumber}: ${quizQuestions[currentQuestionNumberIndex].question}`;
     document.getElementById("options").innerHTML=`
-            <input id="option1" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option1}" required>
-            <label for="option1">${quizQuestions[currentQuestionNumberIndex].option1}</label>
-            <br>
-            <input id="option2" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option2}">
-            <label for="option2">${quizQuestions[currentQuestionNumberIndex].option2}</label>
-            <br>
-            <input id="option3" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option3}">
-            <label for="option3">${quizQuestions[currentQuestionNumberIndex].option3}</label>
-            <br>
-            <input id="option4" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option4}">
-            <label for="option4">${quizQuestions[currentQuestionNumberIndex].option4}</label>
+            <div class="container-fluid home">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <input id="option1" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option1}" required>
+                        <label for="option1">${quizQuestions[currentQuestionNumberIndex].option1}</label>
+                        <br>
+                        <input id="option2" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option2}">
+                        <label for="option2">${quizQuestions[currentQuestionNumberIndex].option2}</label>
+                        <br>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input id="option3" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option3}">
+                        <label for="option3">${quizQuestions[currentQuestionNumberIndex].option3}</label>
+                        <br>
+                        <input id="option4" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option4}">
+                        <label for="option4">${quizQuestions[currentQuestionNumberIndex].option4}</label>
+                    </div>
+                </div>
+            </div>
             `;
 };
 

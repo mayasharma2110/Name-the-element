@@ -77,17 +77,21 @@ body {
 #introduction {
     width: 90%;
     margin: 1rem 5% 1rem 5%;
+    /* text-align: center; */
 }
 
-/* user options */
-.user-options {
-    width: 90%;
-    margin: 1rem 5% 1rem 5%;
+#introductory-heading h2{
+    text-align: center;
 }
 
-/* add some margins/padding to inputs and labels */
+#introduction label {
+    margin-right: 0.5rem;
+    /* width: 60px;
+    height: 24px; */
+    /* text-align: left; */
+}
 
-/* add some margins/padding to submit button */
+/* submit button */
 #start_quiz {
     color: navy;
     font-weight: 600;
@@ -100,6 +104,22 @@ body {
 #quiz {
     width: 90%;
     margin: 1rem 5% 1rem 5%;
+}
+
+/* question */
+#question_text {
+    text-align: center;
+}   
+
+/* add some margins/padding to inputs and labels */
+#user_picks {
+    text-align: center;
+}
+
+#quiz label {
+    width: 100px;
+    height: 24px;
+    text-align: left;
 }
 
 /* submit ans/next question buttons */
@@ -128,7 +148,6 @@ body {
     color: navy;
     display:inline-block;
     border: solid navy 1px;
-    /* padding: 0.5rem; */
     margin: 0.2rem; 
     border-radius: 50%;
     height: 30px;
