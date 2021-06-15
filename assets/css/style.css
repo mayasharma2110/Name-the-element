@@ -181,5 +181,24 @@ body {
 }
 
 /* restart/reselect buttons */
+#reselect {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+#restart {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+}
 
 /* play again button */
+#play_again {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+}

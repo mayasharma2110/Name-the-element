@@ -3,10 +3,11 @@
 // START ON QUESTION 1 OF GAME
 let currentQuestionNumber=1;
 let currentQuestionNumberIndex=0;
+let numberAnswered=0;
 
 // START PROGRESS BAR ON 0 (CORRECT) and 0 (INCORRECT)
-// let numberCorrect = 0;
-// let numberIncorrect = 0;
+let numberCorrect = 0;
+let numberIncorrect = 0;
 let percentIncorrect = 0;
 let percentCorrect = 0;
 
@@ -78,20 +79,17 @@ function prepareGame() {
 // current question bar
 function currentQuestionBar() {
     if (number==5) {
-        // console.log("show 5 questions");   
         document.getElementById("current_question").innerHTML=`
         <div>1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div>
         `;
     }
     else if (number==10) {
-        // console.log("show 10 questions");  
         document.getElementById("current_question").innerHTML=`
         <div>1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div>
         <div>6</div> <div>7</div> <div>8</div> <div>9</div> <div>10</div>
         `;
     }
     else if (number==15) {
-        // console.log("show 15 questions"); 
         document.getElementById("current_question").innerHTML=`
         <div>1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div>
         <div>6</div> <div>7</div> <div>8</div> <div>9</div> <div>10</div>
@@ -152,6 +150,9 @@ function sumbittedAnswer(event){
     // prevent default
     event.preventDefault();
 
+    // increment variable values
+    numberAnswered++;
+
     // get user input and save as variables;
     let userAnswer=$('[name="option"]:checked')[0].value
 
@@ -160,23 +161,19 @@ function sumbittedAnswer(event){
 
 
     // check answer and give feedback, also update progress bar based on userResult
-    [percentCorrect,percentIncorrect] = displayFeedback(userAnswer);
-    // console.log(percentIncorrect);
-    // console.log(percentCorrect);
+    [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect] = displayFeedback(userAnswer);
 
     // IF NOT LAST QUESTION
+    if (currentQuestionNumber<number) {
+        // show next question button and hide submit button
+            showNextQuestionButton();
+    }
 
-    // show next question button and hide submit button
-    showNextQuestionButton();
+    if (currentQuestionNumber==number) {
+        endGame();
+    } 
 
-    // IF LAST QUESTION
-
-    // show play again button and hide submit button
-    // showPlayAgainButton();
-    // display overall feedback to user
-    // overallFeedback();
-
-    return [percentCorrect,percentIncorrect];
+    return [numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 };
 
 let userSubmit=document.getElementById("user_picks");
@@ -192,46 +189,59 @@ function showNextQuestionButton(){
 }
 
 function displayFeedback(userAnswer) {
-
-    // console.log(userAnswer);
     let userResult = userAnswer===quizQuestions[currentQuestionNumberIndex].correct;
     if (userResult) {
         document.getElementById("user_feedback").innerHTML=`Well done you got it correct!`;
-        [percentCorrect, percentIncorrect]=updateProgressBarCorrect(percentCorrect,percentIncorrect);
-        // console.log(percentCorrect);
-        // console.log(percentIncorrect);
-        return [percentCorrect, percentIncorrect];
+        [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]=updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect);
+        return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
     } else {
         document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}`;
-        [percentCorrect, percentIncorrect]=updateProgressBarIncorrect(percentCorrect,percentIncorrect);
-        // console.log(percentCorrect);
-        // console.log(percentIncorrect);
-        return [percentCorrect, percentIncorrect];
+        [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]=updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect);
+        return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
     }
 }
 
-function updateProgressBarCorrect(percentCorrect,percentIncorrect) {
+function updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect) {
+    numberCorrect++;
     percentCorrect=percentCorrect+1/number*100;
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
-    // console.log(percentCorrect);
-    // console.log(percentIncorrect);
-    return [percentCorrect, percentIncorrect];
+    return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 }
 
-function updateProgressBarIncorrect(percentCorrect,percentIncorrect) {
+function updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect) {
+    numberIncorrect++;
     percentIncorrect=percentIncorrect+1/number*100;
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
-    // console.log(percentCorrect);
-    // console.log(percentIncorrect);
-    return [percentCorrect, percentIncorrect];
+    return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
+}
+
+function endGame() {
+    // show play again button and hide submit button
+        showPlayAgainButton();
+        // display overall feedback to user
+        overallFeedback();
+}
+
+function showPlayAgainButton() {
+    $("#submit_answer").removeClass("show").addClass("hide"); 
+    $("#restart").removeClass("show").addClass("hide");
+    $("#reselect").removeClass("show").addClass("hide");
+    $("#play_again").removeClass("hide").addClass("show");   
+}
+
+function overallFeedback() {
+    $("#overall_feedback").html(`
+    <p>You answered ${numberAnswered} out of ${number} questions. You got ${numberCorrect} question(s) correct (${percentCorrect}%) and ${numberIncorrect} question(s) incorrect (${percentIncorrect}%) .</p>
+    <p>Click below to play another quiz!</p>
+    `)
 }
 
 //USER CLICKS NEXT QUESTION
@@ -240,7 +250,6 @@ function nextQuestion(event){
     // increment variable values
     currentQuestionNumber++;
     currentQuestionNumberIndex++;
-    console.log(currentQuestionNumber);
 
     //clear user feedback
     clearUserFeedback();
@@ -251,17 +260,8 @@ function nextQuestion(event){
     // display question and options
     displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex);
 
-    // IF NOT LAST QUESTION
-
     // show next submit button and hide next question button
     showSubmitButton();
-
-    // IF LAST QUESTION
-
-    // show play again button and hide submit button
-    // showPlayAgainButton();
-    // display overall feedback to user
-    // overallFeedback();
 
 };
 
