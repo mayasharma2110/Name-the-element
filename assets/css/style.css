@@ -162,6 +162,11 @@ body {
 }
 
 /* progress bar */
+.progress {
+    height:40px;
+    border: 1px solid navy;
+}
+
 .bg-correct {
     background:#aad9b8;
 }
@@ -181,18 +186,48 @@ body {
 
 /* restart, reselect and play again buttons */
 
-#reselect, #play_again, #restart {
+#reselect_restart {
+    text-align: center;  
+}
+
+#reselect, #restart {
+    margin: 0.5rem 2rem;
+    width: 140px;
+    /* align-items: center; */
+    display: inline-block;
+    width: 240px;
+    height: 100%;
+}
+
+#b_reselect, #b_restart {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
-    align-items: center;
     background-color: silver;
     border: 1px solid navy;
     padding: 0.25rem;
-    margin: 0.5rem 2rem;
-    width: 140px;
+    /* align-items: center; */
+    /* margin: 0.5rem 2rem;
+    width: 140px; */
 }
 
-#reselect_restart {
-    text-align: center;
+#p_reselect, #p_restart {
+    /* width: 140px; */
+    padding: 0.25rem;
+    /* align-items: center; */
+    /* display: inline-block; */
+    /* margin: 0.5rem 2rem;
+    width: 140px; */
+}
+
+#play_again {
+    color: navy;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: silver;
+    border: 1px solid navy;
+    /* align-items: center; */
+    padding: 0.25rem;
+    /* margin: 0.5rem 2rem;
+    width: 140px; */
 }
