@@ -96,8 +96,10 @@ body {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
-    /* align-items: center; */
     text-align: center;
+    background-color: silver;
+    border: 1px solid navy;
+    padding: 0.25rem;
 }
 
 /* quiz */
@@ -123,18 +125,15 @@ body {
 }
 
 /* submit ans/next question buttons */
-#submit_answer {
+#submit_answer, #next_question button {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
     align-items: center;
-}
-
-#next_question button{
-    color: navy;
-    font-weight: 600;
-    font-size: 1.2rem;
-    align-items: center;
+    background-color: silver;
+    border: 1px solid navy;
+    padding: 0.25rem;
+    width: 140px;
 }
 
 /* current_question */
@@ -177,28 +176,23 @@ body {
 }
 
 .show {
-    display:block;
+    display:inline-block;
 }
 
-/* restart/reselect buttons */
-#reselect {
+/* restart, reselect and play again buttons */
+
+#reselect, #play_again, #restart {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
     align-items: center;
+    background-color: silver;
+    border: 1px solid navy;
+    padding: 0.25rem;
+    margin: 0.5rem 2rem;
+    width: 140px;
 }
 
-#restart {
-    color: navy;
-    font-weight: 600;
-    font-size: 1.2rem;
-    align-items: center;
-}
-
-/* play again button */
-#play_again {
-    color: navy;
-    font-weight: 600;
-    font-size: 1.2rem;
-    align-items: center;
+#reselect_restart {
+    text-align: center;
 }
