@@ -38,7 +38,7 @@ let questionsMedium=[
     {question:"_____ dioxide in solid state is known as dry ice.",option1:"blah",option2:"Carbon (C)",option3:"blah",option4:"blah",correct:"Carbon (C)"},
     {question:"Every _____ atom in your body is likely 13.5 billion years old because they were created at the birth of the universe.",option1:"Hydrogen (H)",option2:"blah",option3:"blah",option4:"blah",correct:"Hydrogen (H)"},
     {question:"Superfluid _____ defies gravity and climbs on walls",option1:"blah",option2:"Helium (He)",option3:"blah",option4:"blah",correct:"Helium (He)"},
-    {question:"Mars is red because of _____ oxide",option1:"blah",option2:"blah",option3:"blah",option4:"Iron (Fe)",correct:"Iron (Fe)"},
+    {question:"Mars is red because of _____ oxide.",option1:"blah",option2:"blah",option3:"blah",option4:"Iron (Fe)",correct:"Iron (Fe)"},
     {question:"Both osmium and iridium are about two times heavier than _____.",option1:"Lead (Pb)",option2:"blah",option3:"blah",option4:"blah",correct:"Lead (Pb)"},
     {question:"The most conductive metals are silver, followed by copper and _____.",option1:"blah",option2:"Gold (Au)",option3:"blah",option4:"blah",correct:"Gold (Au)"},
     {question:"Saturn's largest moon, Titan, is the only moon in the solar system with a dense atmosphere. Its atmosphere consists of over 98% ________.",option1:"blah",option2:"Nitrogen (N)",option3:"blah",option4:"blah",correct:"Nitrogen (N)"}
@@ -50,7 +50,7 @@ let questionsHard=[
     {question:"________ is an exception found to be in a solid state but can be melted into liquid with the warmth present in your hands.",option1:"Gallium",option2:"blah",option3:"blah",option4:"blah",correct:"Gallium"},
     {question:"________ is the rarest natural element on earth’s crust with only about 28g present.",option1:"blah",option2:"Astatine (At)",option3:"blah",option4:"blah",correct:"Astatine (At)"},
     {question:"There is enough ________ present on Earth surface to cover entire land area up to human knees.",option1:"Gold (Au)",option2:"blah",option3:"blah",option4:"blah",correct:"Gold (Au)"},
-    {question:"Your car’s airbags are packed with salt ________ azide, which is very toxic",option1:"blah",option2:"Sodium (Na)",option3:"blah",option4:"blah",correct:"Sodium (Na)"},
+    {question:"Your car’s airbags are packed with salt ________ azide, which is very toxic.",option1:"blah",option2:"Sodium (Na)",option3:"blah",option4:"blah",correct:"Sodium (Na)"},
     {question:"The heaviest element, in terms of mass per atom, is ________.",option1:"blah",option2:"blah",option3:"blah",option4:"Oganesson (Og)",correct:"Oganesson (Og)"},
     {question:"The heaviest element, in terms of density, is either Osmium or ________.",option1:"Iridium (Ir)",option2:"blah",option3:"blah",option4:"blah",correct:"Iridium (Ir)"},
     {question:"The most electronegative element is ________.",option1:"blah",option2:"Fluorine (F)",option3:"blah",option4:"blah",correct:"Fluorine (F)"},
@@ -195,7 +195,7 @@ function displayFeedback(userAnswer) {
         [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]=updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect);
         return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
     } else {
-        document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}`;
+        document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}.`;
         [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]=updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect);
         return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
     }
