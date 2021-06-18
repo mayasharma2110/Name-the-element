@@ -23,5 +23,4 @@ function startGame(event){
 
 };
 
-let form1=document.getElementById("user-options");
-form1.addEventListener('submit',startGame);
+document.getElementById("user-options").addEventListener('submit',startGame);

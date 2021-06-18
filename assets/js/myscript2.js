@@ -176,8 +176,7 @@ function sumbittedAnswer(event){
     return [numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 };
 
-let userSubmit=document.getElementById("user_picks");
-userSubmit.addEventListener('submit',sumbittedAnswer);
+document.getElementById("user_picks").addEventListener('submit',sumbittedAnswer);
 
 function updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex) {
     $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
@@ -239,7 +238,7 @@ function showPlayAgainButton() {
 
 function overallFeedback() {
     $("#overall_feedback").html(`
-    <p>You answered ${numberAnswered} out of ${number} questions. You got ${numberCorrect} question(s) correct (${percentCorrect}%) and ${numberIncorrect} question(s) incorrect (${percentIncorrect}%) .</p>
+    <p>You answered ${numberAnswered} out of ${number} questions. You got ${numberCorrect} question(s) correct (${percentCorrect}%) and ${numberIncorrect} question(s) incorrect (${percentIncorrect}%).</p>
     <p>Click below to play another quiz!</p>
     `)
 }
@@ -265,8 +264,7 @@ function nextQuestion(event){
 
 };
 
-let userNextQuestion=document.getElementById("next_question").children[0];
-userNextQuestion.addEventListener('click',nextQuestion);
+getElementById("next_question").children[0].addEventListener('click',nextQuestion);
 
 function clearUserFeedback() {
     $("#user_feedback").html("");

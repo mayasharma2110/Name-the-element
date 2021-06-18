@@ -35,7 +35,7 @@ body {
 /* navbar */
 
 .navbar {
-    background-color: silver;
+    background-color: lightgrey;
     border: 0.2rem solid navy;
 }
 
@@ -97,7 +97,7 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     text-align: center;
-    background-color: silver;
+    background-color: lightgrey;
     border: 1px solid navy;
     padding: 0.25rem;
 }
@@ -121,7 +121,10 @@ body {
 #quiz label {
     width: 100px;
     height: 24px;
-    text-align: left;
+    text-align: center;
+    border: 1px solid navy;
+    padding: 0 0.5rem;
+    background: lightgrey;
 }
 
 /* submit ans/next question buttons */
@@ -130,7 +133,7 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     align-items: center;
-    background-color: silver;
+    background-color: lightgray;
     border: 1px solid navy;
     padding: 0.25rem;
     width: 140px;
@@ -203,7 +206,7 @@ body {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
-    background-color: silver;
+    background-color: lightgrey;
     border: 1px solid navy;
     padding: 0.25rem;
     /* align-items: center; */
@@ -224,10 +227,39 @@ body {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
-    background-color: silver;
+    background-color: lightgrey;
     border: 1px solid navy;
     /* align-items: center; */
     padding: 0.25rem;
     /* margin: 0.5rem 2rem;
     width: 140px; */
+}
+
+/* Screen more than 768px */
+@media screen and (min-width: 768px) {
+
+    .periodic-table, .question-example, #introduction, #quiz {
+        width: 80%;
+        margin: 1rem 10% 1rem 10%;
+    }
+}
+
+/* Screen more than 992px */
+@media screen and (min-width: 992px) {
+
+    .periodic-table, .question-example, #introduction, #quiz {
+        width: 70%;
+        margin: 1rem 15% 1rem 15%;
+    }
+
+}
+
+/* Screen more than 1200px */
+@media screen and (min-width: 1200px) {
+
+    .periodic-table, .question-example, #introduction, #quiz {
+        width: 60%;
+        margin: 1rem 20% 1rem 20%;
+    }
+
 }
