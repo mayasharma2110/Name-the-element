@@ -19,7 +19,7 @@ function startGame(event){
     // localStorage.setItem("lastname", "Smith");
 
     //submit form
-    form1.submit();
+    document.getElementById("user-options").submit();
 
 };
 

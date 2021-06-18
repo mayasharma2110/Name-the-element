@@ -304,7 +304,7 @@ Expected - I expected the variables I saved (taken from user input on home page)
 Testing - I tested this by logging the varaible values to the console and commenting out the below code 
 which worked, however when the user was directed to the quiz page (below code was included out) these variables were lost.
 
-> form1.submit();
+> document.getElementById("user-options").submit();
 
 Fix - For this reason I stored the 3 variables (number, difficulty and timer) in local storage so they could be accessed when on the quiz page.
 Detailed information on how local storage works is at the sites [w3schools](https://www.w3schools.com/html/html5_webstorage.asp) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
