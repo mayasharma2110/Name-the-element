@@ -243,9 +243,8 @@ function endGame() {
 
 function showPlayAgainButton() {
     $("#submit_answer").removeClass("show").addClass("hide"); 
-    $("#restart").removeClass("show").addClass("hide");
-    $("#reselect").removeClass("show").addClass("hide");
-    $("#play_again").removeClass("hide").addClass("show");   
+    $("#reselect_restart").addClass("hide");
+    $("#b_play_again").removeClass("hide").addClass("show");   
 }
 
 function overallFeedback() {

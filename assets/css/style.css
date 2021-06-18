@@ -225,12 +225,15 @@ body {
 }
 
 #play_again {
+    text-align: center;
+}
+
+#b_play_again {
     color: navy;
     font-weight: 600;
     font-size: 1.2rem;
     background-color: lightgrey;
     border: 1px solid navy;
-    /* align-items: center; */
     padding: 0.25rem;
     /* margin: 0.5rem 2rem;
     width: 140px; */
