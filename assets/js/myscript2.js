@@ -11,13 +11,20 @@ let numberIncorrect = 0;
 let percentIncorrect = 0;
 let percentCorrect = 0;
 
-// VARIABLES FROM LOVAL STORAGE
+// VARIABLES FROM LOCAL STORAGE
+// Attribution for local sotrage information at 
+// https://www.w3schools.com/html/html5_webstorage.asp and 
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API.
+
 let number = localStorage.getItem("number");
 let difficulty = localStorage.getItem("difficulty");
 let timer = localStorage.getItem("timer");
 
 // ARRAYs TO STORE OBJECTS OF QUESTION DATA, 1 ARRAY FOR EACH DIFFICULTY LEVEL
 
+// Attribution for quiz questions at https://www.thoughtco.com, 
+// https://tutor-pace.typepad.com/onlinetutoring/2015/09/25-basic-and-most-interesting-chemistry-facts.html
+// and  https://www.zmescience.com/science/chemistry/amazing-chemistry-facts/. 
 let questionsEasy=[
     {question:"The chemical forumla for table salt is soduim ________.",option1:"blah",option2:"blah",option3:"Chloride (Cl)",option4:"blah",correct:"Chloride (Cl)"},
     {question:"________ is a colorless gas, but when found in liquid or solid state, it is blue in color.",option1:"blah",option2:"blah",option3:"blah",option4:"Oxygen (O)",correct:"Oxygen (O)"},
@@ -104,6 +111,7 @@ function currentQuestionBar() {
 function getQuizQuestions() {
     if (difficulty=="easy") {
         let questionsEasy1 = questionsEasy.sort(() => Math.random() - 0.5);//randomize order of questions
+        // Attribution for randomizing arrays found at https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
         return questionsEasy1.slice(0,number);
     }
     else if (difficulty=="medium") {
@@ -179,6 +187,7 @@ function sumbittedAnswer(event){
 document.getElementById("user_picks").addEventListener('submit',sumbittedAnswer);
 
 function updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex) {
+    // Attribution to select an index from an array in jQuery: https://api.jquery.com/eq/
     $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
 }
 
@@ -203,22 +212,26 @@ function displayFeedback(userAnswer) {
 function updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect) {
     numberCorrect++;
     percentCorrect=percentCorrect+1/number*100;
+    // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
+    // End of progress bar using bootstrap styling 
     return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 }
 
 function updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect) {
     numberIncorrect++;
     percentIncorrect=percentIncorrect+1/number*100;
+    // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
+    // End of progress bar using bootstrap styling 
     return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 }
 
@@ -271,6 +284,7 @@ function clearUserFeedback() {
 }
 
 function updateCurrentQuestionBar(currentQuestionNumber, currentQuestionNumberIndex) {
+    // Attribution to select an index from an array in jQuery: https://api.jquery.com/eq/
     $("#current_question").children().eq(currentQuestionNumberIndex).addClass("current_question_color");
 }
 

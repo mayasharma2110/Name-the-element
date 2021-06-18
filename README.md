@@ -40,7 +40,12 @@ Mockups:
     * [Features Left to Implement](#features-left-to-inplement)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
-  * [Manual Testing](#manual-testing)
+  * [Local Storage](#correct-answer)
+  * [Randomize Array](#randomize-array)
+  * [Current question bar](#current-question-bar)
+  * [Incorrect Answer](#incorrect-answer)
+  * [Correct Answer](#correct-answer)
+  * [Progress Bar](#progress-bar)
   * [Online Validation](#online-validation)
   * [Lighthouse Validation](#lighthouse-validation) 
   * [User Stories from the UX Section](#user-stories-from-the-ux-section)
@@ -292,6 +297,76 @@ are used throughout the website.
 
 ## Testing
 
+### Local Storage
+
+Expected - I expected the variables I saved (taken from user input on home page), to be available to use in the quiz.
+
+Testing - I tested this by logging the varaible values to the console and commenting out the below code 
+which worked, however when the user was directed to the quiz page (below code was included out) these variables were lost.
+
+> form1.submit();
+
+Fix - For this reason I stored the 3 variables (number, difficulty and timer) in local storage so they could be accessed when on the quiz page.
+Detailed information on how local storage works is at the sites [w3schools](https://www.w3schools.com/html/html5_webstorage.asp) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+
+I used code as given below:
+
+> localStorage.setItem("number", number);
+
+> let number = localStorage.getItem("number");
+
+### Random Array
+
+I wanted the order of questions to be randomized and not in the same order each time, 
+I used the below code which I found on [stackoverflow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) to randomize the array of questions.
+
+> let randomizedarray = array.sort(() => Math.random() - 0.5);
+
+### Current question bar
+
+For the current question bar I wanted the background colours for the numbers to be responsive to what question the user was on and what questions they had completed.
+To do this I needed to target based on an index in jQuery.
+The offical [jQuery](https://api.jquery.com/eq/) documentation helped me do this.
+
+> $("#current_question").children().eq(currentQuestionNumberIndex).addClass("current_question_color");
+
+> $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
+
+### Incorrect Answer
+
+Expected - When the user clicks on an incorrect answer I wanted the user to be told they were wrong and given the correct answer.
+
+Testing - Tested the feature by selecting a wrong answer and submit.
+
+Result - The feature acted as normally and it displayed text saying the user was wrong along with the correct answer.
+
+### Correct Answer
+
+Expected - When the user clicks on the correct answer I wanted the user to be told they were correct.
+
+Testing - Tested the feature by selecting the correct answer and submit.
+
+Result - The feature did not respond and showed the user was wrong.
+
+Fix - The inputs did not have the correct value to allow it to validate the correct answer.
+I updated the below code to from
+
+> input id="option1" type="radio" name="option" value="option1" required
+
+to 
+
+> input id="option1" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option1}" required
+
+### Progress Bar 
+
+Expected - The progress bar is expected to update as the user progresses through the quiz and update based on what number/percentage of questions are correct/incorrect.
+
+Testing - Tested the feature by going through a quiz and checking the progress bar after each question was submitted.
+
+Result - The feature acted as normally and it did update based on what number/percentage of questions are correct/incorrect.
+
+### Other 
+
 structure:
 
 Expected -Feature is expected to do X why the user does Y
@@ -305,8 +380,6 @@ or
 Result - The feature acted as normally and it did Y
 
 Fix - I did Z to the code because something was missing
-
-### Manual Testing
 
 ### Online Validation
 
@@ -431,7 +504,11 @@ on your own repository to view/edit as you wish.
 
 * I used images from online, information below in the media section.
 
-* Questions for the quiz from sites: xxxxxxx.
+* For the questions in the quiz, I took chemistry facts from the sites [thoughtco](https://www.thoughtco.com), 
+[tutor-pace](https://tutor-pace.typepad.com/onlinetutoring/2015/09/25-basic-and-most-interesting-chemistry-facts.html) 
+and [zmescience](https://www.zmescience.com/science/chemistry/amazing-chemistry-facts/). 
+These provided the question text and correct answer, 
+for the incorrect options I chose these myself.
 
 * I had a look at exisiting quizzes on sites to gain information on what features to include for my own quiz game: xxxxx.
 
@@ -440,7 +517,7 @@ on your own repository to view/edit as you wish.
 * I found the following images online from [Science Notes](https://sciencenotes.org/): 
   * periodic-table-of-elements - owner Science Notes [image link here](https://sciencenotes.org/printable-periodic-table/)
  
-* Please note I did minor editing (cropping only) to some of these photos.
+* The image quiz-example is a screenshot of one of the quiz questions.
  
 ### Acknowledgments
 
