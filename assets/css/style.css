@@ -53,20 +53,21 @@ body {
     color: navy; 
 }
 
-/* period table of elements image */
-.periodic-table {
+/* images */
+
+.pictures {
     width: 90%;
     margin: 1rem 5% 1rem 5%;
+}
+
+.periodic-table {
+    /* margin-right: 1rem; */
+    margin-bottom: 1rem;
 }
 
 .periodic-table img {
     width: 100%;
     border: 0.2px solid navy;
-}
-
-.question-example {
-    width: 90%;
-    margin: 1rem 5% 1rem 5%;
 }
 
 .question-example img {
@@ -119,8 +120,8 @@ body {
 }
 
 #quiz label {
-    width: 100px;
-    height: 24px;
+    width: 150px;
+    height: 30px;
     text-align: center;
     border: 1px solid navy;
     padding: 0 0.5rem;
@@ -238,18 +239,49 @@ body {
 /* Screen more than 768px */
 @media screen and (min-width: 768px) {
 
-    .periodic-table, .question-example, #introduction, #quiz {
+    .pictures{
         width: 80%;
         margin: 1rem 10% 1rem 10%;
     }
+
+    #introduction, #quiz {
+        width: 80%;
+        margin: 1rem 10% 1rem 10%;
+    }
+
+    .periodic-table {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    }
+
+    .question-example {
+    margin-left: 1rem;
+    margin-bottom: 0;
+    }
+
 }
 
 /* Screen more than 992px */
 @media screen and (min-width: 992px) {
 
-    .periodic-table, .question-example, #introduction, #quiz {
-        width: 70%;
-        margin: 1rem 15% 1rem 15%;
+    .pictures {
+        width: 60%;
+        margin: 1rem 20% 1rem 20%;
+    }
+
+    #introduction, #quiz {
+        width: 60%;
+        margin: 1rem 20% 1rem 20%;
+    }
+
+    .periodic-table {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    }
+
+    .question-example {
+    margin-left: 1rem;
+    margin-bottom: 0;
     }
 
 }
@@ -257,9 +289,24 @@ body {
 /* Screen more than 1200px */
 @media screen and (min-width: 1200px) {
 
-    .periodic-table, .question-example, #introduction, #quiz {
-        width: 60%;
-        margin: 1rem 20% 1rem 20%;
+    .pictures {
+        width: 50%;
+        margin: 1rem 25% 1rem 25%;
+    }
+
+    #introduction, #quiz {
+        width: 50%;
+        margin: 1rem 25% 1rem 25%;
+    }
+
+    .periodic-table {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    }
+
+    .question-example {
+    margin-left: 1rem;
+    margin-bottom: 0;
     }
 
 }
