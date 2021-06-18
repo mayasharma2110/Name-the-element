@@ -127,7 +127,6 @@ function getQuizQuestions() {
 // display question and options
 function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex) {
 
-    // document.getElementById("question_text").innerHTML=`Question ${currentQuestionNumber}`;
     document.getElementById("question_text").innerHTML=`Question ${currentQuestionNumber}: ${quizQuestions[currentQuestionNumberIndex].question}`;
     document.getElementById("options").innerHTML=`
             <div class="container-fluid home">
@@ -277,7 +276,7 @@ function nextQuestion(event){
 
 };
 
-getElementById("next_question").children[0].addEventListener('click',nextQuestion);
+document.getElementById("next_question").children[0].addEventListener('click',nextQuestion);
 
 function clearUserFeedback() {
     $("#user_feedback").html("");
