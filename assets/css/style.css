@@ -93,6 +93,7 @@ body {
 }
 
 /* submit button */
+
 #start_quiz {
     color: navy;
     font-weight: 600;
@@ -104,17 +105,20 @@ body {
 }
 
 /* quiz */
+
 #quiz {
     width: 90%;
     margin: 1rem 5% 1rem 5%;
 }
 
 /* question */
+
 #question_text {
     text-align: center;
 }   
 
 /* add some margins/padding to inputs and labels */
+
 #user_picks {
     text-align: center;
 }
@@ -129,6 +133,7 @@ body {
 }
 
 /* submit ans/next question buttons */
+
 #submit_answer, #next_question button {
     color: navy;
     font-weight: 600;
@@ -165,7 +170,14 @@ body {
     background:#aad9b8;
 }
 
+/* overall feedback */
+
+#user_feedback {
+    height: 48px;
+}
+
 /* progress bar */
+
 .progress {
     height:40px;
     border: 1px solid navy;
@@ -180,6 +192,7 @@ body {
 }
 
 /* submit/next question buttons*/
+
 .hide {
     display:none;
 }
@@ -192,14 +205,11 @@ body {
 
 #reselect_restart {
     text-align: center;  
+    margin-top: 1rem;
 }
 
 #reselect, #restart {
     margin: 0.5rem 2rem;
-    width: 140px;
-    /* align-items: center; */
-    display: inline-block;
-    width: 240px;
     height: 100%;
 }
 
@@ -210,18 +220,7 @@ body {
     background-color: lightgrey;
     border: 1px solid navy;
     padding: 0.25rem;
-    /* align-items: center; */
-    /* margin: 0.5rem 2rem;
-    width: 140px; */
-}
-
-#p_reselect, #p_restart {
-    /* width: 140px; */
-    padding: 0.25rem;
-    /* align-items: center; */
-    /* display: inline-block; */
-    /* margin: 0.5rem 2rem;
-    width: 140px; */
+    width: 100px;
 }
 
 #play_again {
@@ -235,8 +234,7 @@ body {
     background-color: lightgrey;
     border: 1px solid navy;
     padding: 0.25rem;
-    /* margin: 0.5rem 2rem;
-    width: 140px; */
+    /* width: 140px; */
 }
 
 /* Screen more than 768px */
@@ -260,6 +258,12 @@ body {
     .question-example {
     margin-left: 1rem;
     margin-bottom: 0;
+    }
+
+    #reselect, #restart {
+        margin: 0 2rem;
+        margin-top: 0rem;
+        margin-right: 1rem;
     }
 
 }
