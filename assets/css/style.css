@@ -132,6 +132,11 @@ body {
     background: lightgrey;
 }
 
+#quiz label:hover {
+    border: 1px solid navy;
+    background: #fcf9bf;
+}
+
 /* submit ans/next question buttons */
 
 #submit_answer, #next_question button {
@@ -168,6 +173,12 @@ body {
 
 .completed_question_color {
     background:#aad9b8;
+}
+
+/* question text */
+
+#question_text {
+    height: 72px;
 }
 
 /* overall feedback */
@@ -264,6 +275,14 @@ body {
         margin: 0 2rem;
         margin-top: 0rem;
         margin-right: 1rem;
+    }
+
+    #question_text {
+    height: 48px;
+    }
+
+    #user_feedback {
+    height: 24px;
     }
 
 }

@@ -26,42 +26,42 @@ let timer = localStorage.getItem("timer");
 // https://tutor-pace.typepad.com/onlinetutoring/2015/09/25-basic-and-most-interesting-chemistry-facts.html
 // and  https://www.zmescience.com/science/chemistry/amazing-chemistry-facts/. 
 let questionsEasy=[
-    {question:"The chemical forumla for table salt is soduim ________.",option1:"blah",option2:"blah",option3:"Chloride (Cl)",option4:"blah",correct:"Chloride (Cl)"},
-    {question:"________ is a colorless gas, but when found in liquid or solid state, it is blue in color.",option1:"blah",option2:"blah",option3:"blah",option4:"Oxygen (O)",correct:"Oxygen (O)"},
-    {question:"________ is the most abundant element in universe.",option1:"Hydrogen (H)",option2:"blah",option3:"blah",option4:"blah",correct:"Hydrogen (H)"},
-    {question:"________ is the most abundant element on earth.",option1:"blah",option2:"Oxygen (O)",option3:"blah",option4:"blah",correct:"Oxygen (O)"},
-    {question:"Since ________ is light as compared to air, ________ balloons float easily.",option1:"Helium (He)",option2:"blah",option3:"blah",option4:"blah",correct:"Helium (He)"},
-    {question:"The second most abundant element in the universe is ________. ",option1:"blah",option2:"Helium (He)",option3:"blah",option4:"blah",correct:"Helium (He)"},
-    {question:"The primary use of ________ is for fertilizer production.",option1:"blah",option2:"blah",option3:"blah",option4:"Phosphorus (P)",correct:"Phosphorus (P)"},
-    {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"blah",option3:"blah",option4:"blah",correct:"Nitrogen (N)"},
-    {question:"9000 pencils lead (graphite) can be produced with the _____ found in human body.",option1:"blah",option2:"blah",option3:"Carbon (C)",option4:"blah",correct:"Carbon (C)"},
-    {question:"________ is an element you encounter daily, most often in water and toothpaste.",option1:"blah",option2:"blah",option3:"Fluorine (F)",option4:"blah",correct:"Fluorine (F)"}
+    {question:"The chemical forumla for table salt is ________ chloride.",option1:"Oxygen (O)",option2:"Helium (He)",option3:"Sodium (Na)",option4:"Carbon (C)",correct:"Sodium (Na)"},
+    {question:"________ is a colorless gas, but when in liquid or solid state, it is blue.",option1:"Nitrogen (N)",option2:"Carbon (C)",option3:"Phosphorus (P)",option4:"Oxygen (O)",correct:"Oxygen (O)"},
+    {question:"________ is the most abundant element in universe.",option1:"Hydrogen (H)",option2:"Zinc (Zn)",option3:"Potassium (K)",option4:"Gold (Au)",correct:"Hydrogen (H)"},
+    {question:"________ is the most abundant element on earth.",option1:"Hydrogen (H)",option2:"Oxygen (O)",option3:"Helium (He)",option4:"Nitrogen (N)",correct:"Oxygen (O)"},
+    {question:"Since ________ is light as compared to air, ________ balloons float easily.",option1:"Helium (He)",option2:"Hydrogen (H)",option3:"Nitrogen (N)",option4:"Oxygen (O)",correct:"Helium (He)"},
+    {question:"The second most abundant element in the universe is ________. ",option1:"Nitrogen (N)",option2:"Helium (He)",option3:"Oxygen (O)",option4:"Calcium (Ca)",correct:"Helium (He)"},
+    {question:"The primary use of ________ is for fertilizer production.",option1:"Gold (Au)",option2:"Zinc (Zn)",option3:"Sodium (Na)",option4:"Phosphorus (P)",correct:"Phosphorus (P)"},
+    {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"Oxygen (O)",option3:"Hydrogen (H)",option4:"Carbon (C)",correct:"Nitrogen (N)"},
+    {question:"9000 pencils lead (graphite) can be produced with the _____ found in human body.",option1:"Oxygen (O)",option2:"Calcium (Ca)",option3:"Carbon (C)",option4:"Phosphorus (P)",correct:"Carbon (C)"},
+    {question:"________ is an element found in water and toothpaste.",option1:"Carbon (C)",option2:"Gola (Au)",option3:"Fluorine (F)",option4:"Silver (Ag)",correct:"Fluorine (F)"}
 ];
 
 let questionsMedium=[
     {question:"20% of ________ found in the environment is a result of Amazon rainforest.",option1:"Nitrogen (N)",option2:"Sodium (Na)",option3:"Oxygen (O)",option4:"Hydrogen (H)",correct:"Oxygen (O)"},
-    {question:"The only two non-silvery metals are gold and _____.",option1:"blah",option2:"blah",option3:"blah",option4:"Copper (Cu)",correct:"Copper (Cu)"},
-    {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"blah",option3:"blah",option4:"blah",correct:"Nitrogen (N)"},
-    {question:"_____ dioxide in solid state is known as dry ice.",option1:"blah",option2:"Carbon (C)",option3:"blah",option4:"blah",correct:"Carbon (C)"},
-    {question:"Every _____ atom in your body is likely 13.5 billion years old because they were created at the birth of the universe.",option1:"Hydrogen (H)",option2:"blah",option3:"blah",option4:"blah",correct:"Hydrogen (H)"},
-    {question:"Superfluid _____ defies gravity and climbs on walls",option1:"blah",option2:"Helium (He)",option3:"blah",option4:"blah",correct:"Helium (He)"},
-    {question:"Mars is red because of _____ oxide.",option1:"blah",option2:"blah",option3:"blah",option4:"Iron (Fe)",correct:"Iron (Fe)"},
-    {question:"Both osmium and iridium are about two times heavier than _____.",option1:"Lead (Pb)",option2:"blah",option3:"blah",option4:"blah",correct:"Lead (Pb)"},
-    {question:"The most conductive metals are silver, followed by copper and _____.",option1:"blah",option2:"Gold (Au)",option3:"blah",option4:"blah",correct:"Gold (Au)"},
-    {question:"Saturn's largest moon, Titan, is the only moon in the solar system with a dense atmosphere. Its atmosphere consists of over 98% ________.",option1:"blah",option2:"Nitrogen (N)",option3:"blah",option4:"blah",correct:"Nitrogen (N)"}
+    {question:"The only two non-silvery metals are gold and _____.",option1:"Aluminium (Al)",option2:"Zinc (Zn)",option3:"Silver (Au)",option4:"Copper (Cu)",correct:"Copper (Cu)"},
+    {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"Oxygen (O)",option3:"Hydrogen (N)",option4:"Carbon (C)",correct:"Nitrogen (N)"},
+    {question:"_____ dioxide in solid state is known as dry ice.",option1:"Nitrogen (N)",option2:"Carbon (C)",option3:"Oxygen (O)",option4:"Hydrogen (N)",correct:"Carbon (C)"},
+    {question:"Every _____ atom in your body is likely 13.5 billion years old.",option1:"Hydrogen (H)",option2:"Nitrogen (N)",option3:"Carbon (C)",option4:"Oxygen (O)",correct:"Hydrogen (H)"},
+    {question:"Superfluid _____ defies gravity and climbs on walls.",option1:"Sodium (Na)",option2:"Helium (He)",option3:"Oxygen (O)",option4:"Copper (Cu)",correct:"Helium (He)"},
+    {question:"Mars is red because of _____ oxide.",option1:"Nitrogen (N)",option2:"Sodium (Na)",option3:"Carbon (C)",option4:"Iron (Fe)",correct:"Iron (Fe)"},
+    {question:"Both osmium and iridium are about two times heavier than _____.",option1:"Lead (Pb)",option2:"Phosphorus (P)",option3:"Gold (Au)",option4:"Silver (Ag)",correct:"Lead (Pb)"},
+    {question:"The most conductive metals are silver, followed by copper and _____.",option1:"Iron (Fe) ",option2:"Gold (Au)",option3:"Copper (Cu)",option4:"Nickel (Ni)",correct:"Gold (Au)"},
+    {question:"Titan's atmosphere consists of over 98% ________. It is the only moon with a dense atmosphere.",option1:"Oxygen (O)",option2:"Nitrogen (N)",option3:"Hydrogen (H)",option4:"Helium (He)",correct:"Nitrogen (N)"}
 ];
 
 let questionsHard=[
-    {question:"Lightning strikes produce ________, which produces the characteristic smell after lightning storms.",option1:"blah",option2:"blah",option3:"Ozone (O3)",option4:"blah",correct:"Ozone (O3)"},
-    {question:"Mercury & ________ are the only elements found to be in a liquid state at room temperature.",option1:"blah",option2:"blah",option3:"blah",option4:"Bromine (Br)",correct:"Bromine (Br)"},
-    {question:"________ is an exception found to be in a solid state but can be melted into liquid with the warmth present in your hands.",option1:"Gallium",option2:"blah",option3:"blah",option4:"blah",correct:"Gallium"},
-    {question:"________ is the rarest natural element on earth’s crust with only about 28g present.",option1:"blah",option2:"Astatine (At)",option3:"blah",option4:"blah",correct:"Astatine (At)"},
-    {question:"There is enough ________ present on Earth surface to cover entire land area up to human knees.",option1:"Gold (Au)",option2:"blah",option3:"blah",option4:"blah",correct:"Gold (Au)"},
-    {question:"Your car’s airbags are packed with salt ________ azide, which is very toxic.",option1:"blah",option2:"Sodium (Na)",option3:"blah",option4:"blah",correct:"Sodium (Na)"},
-    {question:"The heaviest element, in terms of mass per atom, is ________.",option1:"blah",option2:"blah",option3:"blah",option4:"Oganesson (Og)",correct:"Oganesson (Og)"},
-    {question:"The heaviest element, in terms of density, is either Osmium or ________.",option1:"Iridium (Ir)",option2:"blah",option3:"blah",option4:"blah",correct:"Iridium (Ir)"},
-    {question:"The most electronegative element is ________.",option1:"blah",option2:"Fluorine (F)",option3:"blah",option4:"blah",correct:"Fluorine (F)"},
-    {question:"The most electropositive element is ________.",option1:"blah",option2:"blah",option3:"Francium (Fr)",option4:"blah",correct:"Francium (Fr)"}
+    {question:"Lightning strikes produce ________.",option1:"Nitrogen (N)",option2:"Oxygen (O)",option3:"Ozone (O3)",option4:"Helium (He)",correct:"Ozone (O3)"},
+    {question:"Mercury & ________ are the only elements found to be in a liquid state at room temperature.",option1:"Zinc (Zn)",option2:"Copper (Cu)",option3:"Aluminium (Al)",option4:"Bromine (Br)",correct:"Bromine (Br)"},
+    {question:"________ is found in a solid state but can be melted into liquid with the warmth present in your hands.",option1:"Gallium",option2:"Bromine (Br)",option3:"Mercury (Hg)",option4:"Zinc (Zn)",correct:"Gallium"},
+    {question:"________ is the rarest natural element on earth’s crust with only about 28g present.",option1:"Cerium (Ce)",option2:"Astatine (At)",option3:"Scandium (Sc)",option4:"Carbon (C)",correct:"Astatine (At)"},
+    {question:"There is enough ________ present on Earth surface to cover entire land area up to human knees.",option1:"Gold (Au)",option2:"Astatine (At)",option3:"Thulium (Tm)",option4:"Scandium (Sc)",correct:"Gold (Au)"},
+    {question:"Your car’s airbags are packed with salt ________ azide, which is very toxic.",option1:"Copper (Cu)",option2:"Sodium (Na)",option3:"Oxygen (O)",option4:"Carbon (C)",correct:"Sodium (Na)"},
+    {question:"The heaviest element, in terms of mass per atom, is ________.",option1:"Curium (Cm)",option2:"Berkelium (Bk)",option3:"Californium (Cf)",option4:"Oganesson (Og)",correct:"Oganesson (Og)"},
+    {question:"The heaviest element, in terms of density, is either Osmium or ________.",option1:"Iridium (Ir)",option2:"Hassium (Hs)",option3:"Bohrium (Bh)",option4:"Dubnium (Db)",correct:"Iridium (Ir)"},
+    {question:"The most electronegative element is ________.",option1:"Lithium (Li)",option2:"Fluorine (F)",option3:"Boron (B)",option4:"Hydrogen (H)",correct:"Fluorine (F)"},
+    {question:"The most electropositive element is ________.",option1:"Calcium (Ca)",option2:"Kydrogen (H)",option3:"Francium (Fr)",option4:"Magnesium (Mg)",correct:"Francium (Fr)"}
 ];
 
 //PREPARE GAME AND SHOW 1ST QUESTION
