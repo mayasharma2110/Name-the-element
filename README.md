@@ -12,8 +12,6 @@ Mockups:
 
 #![Quiz Mockups](assets/mockups/quiz.PNG)
 
-#![Feedback Mockups](assets/mockups/feedback.PNG)
-
 ## Table of Contents
 
 * [UX](#ux)
@@ -28,7 +26,6 @@ Mockups:
   * [Structure](#structure)
    * [Wireframes Home](#wireframes-home)
    * [Wireframes Quiz](#wireframes-quiz)
-* [Wireframes Feedback](#wireframes-feedback)
    * [Wireframes Comments](#wireframes-comments)
   * [Skeleton](#skeleton)
     * [Colours](#colours)
@@ -135,12 +132,9 @@ with different colours to represent correct/incorrect answers.
 * The quiz page will also have a buttons for the user to progress to the next question, 
 restart the current quiz questions again or to the home page and reselect the options for their quiz.
 
-* The feedback page will show all the questions in the quiz, along with if the user got this correct or not.
-If correct it will display the correct answer and if wrong it will display the users answer and the correct one.
+* At the end of the quiz the user will be presented with how many questions they answered, the number of questions correct and incorrect (with percentages).
 
-* The feedback page will show how many questions the user answered, the number correct and incorrect (with percentages).
-
-* The feedback page will have a play again button to take the user to the home page.
+* At the end of the quiz the user will be presented with a play again button to take the user to the home page.
 
 ### Structure
 
@@ -160,14 +154,12 @@ Below any feedback will be the progress bar showing the percentage of correct an
 Finally at the bottom there will be 2 buttons to allow the user to reselect their quiz options (go to the home page) or
 to start the current quiz questions again.
 
-The feedback page will show how many questions the user answered, the number correct and incorrect (with percentages). 
-The feedback page will also contain all the questions in the quiz, along with if the user got this correct or not.
-If correct it will display the correct answer and if wrong it will display the users answer and the correct one.
-At the bottom the feedback page will have a play again button to take the user to the home page.
+At the end of the quiz the site will show how many questions the user answered, the number correct and incorrect (with percentages). 
+At this point the site will show the play again button to take the user to the home page, where they can reselect choices and play another quiz.
 
 ### Skeleton
 
-I used Balsamiq to make the wireframes for this project. The website was designed to have 3 pages - Home, Quiz and Feedback.
+I used Balsamiq to make the wireframes for this project. The website was designed to have 2 pages - Home and Quiz.
 The wireframes were created for all pages for phone, tablet and desktop devices.
 
 #### Wireframes Home
@@ -198,26 +190,12 @@ Desktop
 
 ![Quiz Desktop Wireframes](assets/wireframes/quiz-desktop.PNG) 
 
-#### Wireframes Feedback
-
-Mobile
-
-![Feedback Phone Wireframes](assets/wireframes/feedback-phone.PNG)  
-
-Tablet
-
-![Feedback Tablet Wireframes](assets/wireframes/feedback-tablet.PNG)
-
-Desktop
-
-![Feedback Desktop Wireframes](assets/wireframes/feedback-desktop.PNG)  
-
 #### Wireframes Comments
 
 Please note there are a few changes to the final site since the wireframes were made:
 
   * The quiz page contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
-  * The feedback page contains the image of the periodic table of elements from the home page.
+  * On a phone the restart button is below the reselct button due to limited space.
 
 ### Surface
 
@@ -398,10 +376,10 @@ I used [lighthouse](https://developers.google.com/web/tools/lighthouse) in chrom
 performance, accessibility, best practises and SEO.
 
 Full reports can be found below:
-* [Mobile Page1](assets/lighthouse/lighthouse-mobile-page1.pdf)
-* [Mobile Page2](assets/lighthouse/lighthouse-mobile-page2.pdf)
-* [Desktop Page1](assets/lighthouse/lighthouse-desktop-page1.pdf)
-* [Desktop Page2](assets/lighthouse/lighthouse-desktop-page2.pdf)
+* [Mobile Home](assets/lighthouse/lighthouse-mobile-home.pdf)
+* [Mobile Quiz](assets/lighthouse/lighthouse-mobile-quiz.pdf)
+* [Desktop Home](assets/lighthouse/lighthouse-desktop-home.pdf)
+* [Desktop Quiz](assets/lighthouse/lighthouse-desktop-quiz.pdf)
 
 ### User Stories from the UX Section
 
@@ -498,7 +476,7 @@ on your own repository to view/edit as you wish.
 
 * The bootstrap library was used to help make this website responsive for different devices. 
 
-* Bootstrap also allowed me to create a dropdown navigation bar for smaller devices.  
+* The bootstrap library was also used to help make the progress bar in the quiz.   
 
 ### Content
 
