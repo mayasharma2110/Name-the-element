@@ -7,9 +7,9 @@ let numberAnswered=0;
 
 // START PROGRESS BAR ON 0 (CORRECT) and 0 (INCORRECT)
 let numberCorrect = 0;
+let percentCorrect = 0;
 let numberIncorrect = 0;
 let percentIncorrect = 0;
-let percentCorrect = 0;
 
 // VARIABLES FROM LOCAL STORAGE
 // Attribution for local sotrage information at 
@@ -290,3 +290,40 @@ function showSubmitButton() {
     $("#next_question").children().removeClass("show").addClass("hide");
     $("#submit_answer").removeClass("hide").addClass("show"); 
 }
+
+// restart button
+function restartQuiz() {
+    // reset current question bar to question 1
+    currentQuestionBar();
+
+    //reset variables
+    currentQuestionNumber=1;
+    currentQuestionNumberIndex=0;
+    numberAnswered=0;
+    numberCorrect = 0;
+    percentCorrect = 0;
+    numberIncorrect = 0;
+    percentIncorrect = 0;
+
+    //reset to question 1 of quiz
+    displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex);
+
+    //submit/next question buttons
+    // if class of next_question is show then hide and show submit button
+    if ($("#next_question").children()[0].className=="show") {
+        showSubmitButton();
+    }
+
+    //reset progress bar
+    // Progress bar using bootstrap styling 
+    document.getElementById("progress_bar").innerHTML=`
+        <div class="progress">
+            <div class="progress-bar bg-incorrect" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-correct" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>`;
+    // End of progress bar using bootstrap styling 
+
+    return [currentQuestionNumber,currentQuestionNumberIndex,numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]
+}
+
+document.getElementById("b_restart").addEventListener("click",restartQuiz);
