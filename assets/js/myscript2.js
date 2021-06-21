@@ -66,6 +66,58 @@ let questionsHard=[
 
 //PREPARE GAME AND SHOW 1ST QUESTION
 
+//add timer
+let x = countdown();
+
+//Attribution: https://www.w3schools.com/howto/howto_js_countdown.asp
+function countdown() {
+
+    if (timer=="yes") {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+    
+    var countDownDate = now + number*60000;//60000 milliseconds per minute
+
+    // Update the count down every 1 second
+    let x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        let distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        console.log(seconds);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("timer").innerHTML = `
+        <div id="timer1">
+            <h3>${minutes}m + ${seconds}s</h3>
+        </div>`;
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer1").innerHTML = "TIME'S UP!";
+            // end the game early
+            endGameEarly();
+            }
+            
+        }, 1000);
+
+        return x; 
+
+    } else if (timer=="no") {
+        let x=0;
+        return x;
+    }
+
+}
+
 let quizQuestions=prepareGame();
 
 function prepareGame() {
@@ -150,6 +202,23 @@ function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNu
             </div>
             `;
 };
+
+//end game early
+function endGameEarly() {
+    // hide restart and reselect buttons, show play again button
+    $("#reselect_restart").addClass("hide");   
+    $("#b_play_again").removeClass("hide").addClass("show");  
+
+    //hide submit/next question button
+    if ($("#next_question").children()[0].className=="show") {
+        $("#next_question").children().removeClass("show").addClass("hide"); 
+    } else if ($("#submit_answer")[0].className=="show") {
+        $("#submit_answer").removeClass("show").addClass("hide"); 
+    }
+
+    // display overall feedback to user
+    overallFeedback();
+}
 
 //USER SUMBITS AN ANSWER
 function sumbittedAnswer(event){
@@ -236,9 +305,9 @@ function updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect
 
 function endGame() {
     // show play again button and hide submit button
-        showPlayAgainButton();
-        // display overall feedback to user
-        overallFeedback();
+    showPlayAgainButton();
+    // display overall feedback to user
+    overallFeedback();
 }
 
 function showPlayAgainButton() {
@@ -322,6 +391,13 @@ function restartQuiz() {
             <div class="progress-bar bg-correct" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
     // End of progress bar using bootstrap styling 
+
+    //reset timer
+    if (timer=="yes") {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML="";
+        countdown();
+    }
 
     return [currentQuestionNumber,currentQuestionNumberIndex,numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]
 }

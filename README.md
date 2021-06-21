@@ -478,6 +478,8 @@ on your own repository to view/edit as you wish.
 
 * The bootstrap library was also used to help make the progress bar in the quiz.   
 
+* The [w3schools site](https://www.w3schools.com/howto/howto_js_countdown.asp) helped me to get the timer for my quiz.
+
 ### Content
 
 * I used images from online, information below in the media section.

@@ -111,6 +111,19 @@ body {
     margin: 1rem 5% 1rem 5%;
 }
 
+/* timer */
+#timer {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+#timer1 {
+    display: inline-block;
+    width: 150px;
+    border: 1px solid navy;
+    padding: 0.5rem 1rem;
+}
+
 /* question */
 
 #question_text {
