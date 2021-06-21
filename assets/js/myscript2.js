@@ -69,7 +69,7 @@ let questionsHard=[
 //add timer
 let x = countdown();
 
-//Attribution: https://www.w3schools.com/howto/howto_js_countdown.asp
+//Attribution for countdown function: https://www.w3schools.com/howto/howto_js_countdown.asp
 function countdown() {
 
     if (timer=="yes") {
@@ -86,7 +86,7 @@ function countdown() {
         var now = new Date().getTime();
 
         // Find the distance between now and the count down date
-        let distance = countDownDate - now;
+        var distance = countDownDate - now;
 
         // Time calculations for days, hours, minutes and seconds
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
