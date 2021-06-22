@@ -142,12 +142,27 @@ body {
     text-align: center;
     border: 1px solid navy;
     padding: 0 0.5rem;
+}
+
+.label_colour {
     background: lightgrey;
 }
 
 #quiz label:hover {
     border: 1px solid navy;
     background: #fcf9bf;
+}
+
+.selected_label {
+    background-color: #fcf9bf;
+}
+
+.correct {
+    background:#aad9b8;
+}
+
+.incorrect {
+    background:#f7aac0;
 }
 
 /* submit ans/next question buttons */

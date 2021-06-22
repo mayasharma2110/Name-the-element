@@ -91,7 +91,7 @@ function countdown() {
         // Time calculations for days, hours, minutes and seconds
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        console.log(seconds);
+        // console.log(seconds);
 
         // Display the result in the element with id="demo"
         document.getElementById("timer").innerHTML = `
@@ -117,6 +117,7 @@ function countdown() {
     }
 
 }
+// end of countdown function
 
 let quizQuestions=prepareGame();
 
@@ -185,18 +186,18 @@ function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNu
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <input id="option1" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option1}" required>
-                        <label for="option1">${quizQuestions[currentQuestionNumberIndex].option1}</label>
+                        <label for="option1" class="label_colour">${quizQuestions[currentQuestionNumberIndex].option1}</label>
                         <br>
                         <input id="option2" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option2}">
-                        <label for="option2">${quizQuestions[currentQuestionNumberIndex].option2}</label>
+                        <label for="option2" class="label_colour">${quizQuestions[currentQuestionNumberIndex].option2}</label>
                         <br>
                     </div>
                     <div class="col-12 col-md-6">
                         <input id="option3" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option3}">
-                        <label for="option3">${quizQuestions[currentQuestionNumberIndex].option3}</label>
+                        <label for="option3" class="label_colour">${quizQuestions[currentQuestionNumberIndex].option3}</label>
                         <br>
                         <input id="option4" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option4}">
-                        <label for="option4">${quizQuestions[currentQuestionNumberIndex].option4}</label>
+                        <label for="option4" class="label_colour">${quizQuestions[currentQuestionNumberIndex].option4}</label>
                     </div>
                 </div>
             </div>
@@ -219,6 +220,25 @@ function endGameEarly() {
     // display overall feedback to user
     overallFeedback();
 }
+
+
+// click on labels changes background colur
+function labelClick(){
+    // check if any other siblings with class "selected_label" if so remove class and add class "label_colour"
+    for (var i = 0; i < 4; i++) {
+        if ($("label").eq(i)[0].className=="selected_label") {
+            $("label").eq(i).removeClass("selected_label").addClass("label_colour");
+            break;
+        }
+    }
+    $(this).prev().trigger("click");
+    $(this).removeClass("label_colour").addClass("selected_label");
+}
+
+document.getElementsByTagName("label")[0].addEventListener("click",labelClick);
+document.getElementsByTagName("label")[1].addEventListener("click",labelClick);
+document.getElementsByTagName("label")[2].addEventListener("click",labelClick);
+document.getElementsByTagName("label")[3].addEventListener("click",labelClick);
 
 //USER SUMBITS AN ANSWER
 function sumbittedAnswer(event){
@@ -266,12 +286,26 @@ function showNextQuestionButton(){
 
 function displayFeedback(userAnswer) {
     let userResult = userAnswer===quizQuestions[currentQuestionNumberIndex].correct;
+    // console.log(quizQuestions[currentQuestionNumberIndex].correct);
     if (userResult) {
         document.getElementById("user_feedback").innerHTML=`Well done you got it correct!`;
+        // label green
+        $('[name="option"]:checked').next().removeClass("selected_label").addClass("correct");
         [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]=updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect);
         return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
     } else {
         document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}.`;
+        // label red
+        $('[name="option"]:checked').next().removeClass("selected_label").addClass("incorrect");
+        // show correct ans in green
+        for (var i = 0; i < 4; i++) {
+            if ($('[name="option"]')[i].value==quizQuestions[currentQuestionNumberIndex].correct) {
+            // console.log(i);
+            $('[name="option"]').eq(i).next().removeClass("label_colour").addClass("correct");
+            // only 1 option can be correct, dont check the rest
+            break;
+            }
+        }
         [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]=updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect,percentIncorrect);
         return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
     }
@@ -393,13 +427,18 @@ function restartQuiz() {
     // End of progress bar using bootstrap styling 
 
     //reset timer
-    if (timer=="yes") {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML="";
-        countdown();
-    }
+    resetTimer();
 
     return [currentQuestionNumber,currentQuestionNumberIndex,numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]
 }
 
 document.getElementById("b_restart").addEventListener("click",restartQuiz);
+
+function resetTimer() {
+    if (timer=="yes") {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML="";
+        x=countdown();
+        return x;
+    }
+}
