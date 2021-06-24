@@ -8,9 +8,9 @@ It is aimed for those who are interested in improving their current chemistry kn
 
 Mockups:
 
-#![Home Mockups](assets/mockups/home.PNG)
+![Home Mockups](assets/mockups/mockup-home.PNG)
 
-#![Quiz Mockups](assets/mockups/quiz.PNG)
+![Quiz Mockups](assets/mockups/mockup-quiz.PNG)
 
 ## Table of Contents
 
