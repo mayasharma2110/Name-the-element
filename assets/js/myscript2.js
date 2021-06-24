@@ -102,7 +102,8 @@ function countdown() {
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("timer1").innerHTML = "TIME'S UP!";
+            document.getElementById("timer1").innerHTML = `<h3>TIME'S UP!</h3>`;
+            
             // end the game early
             endGameEarly();
             }
@@ -216,7 +217,7 @@ function endGameEarly() {
     } else if ($("#submit_answer")[0].className=="show") {
         $("#submit_answer").removeClass("show").addClass("hide"); 
     }
-
+    document.getElementById("timer").innerHTML="Time's up!";
     // display overall feedback to user
     overallFeedback();
 }
@@ -342,6 +343,13 @@ function endGame() {
     showPlayAgainButton();
     // display overall feedback to user
     overallFeedback();
+    // if timer stop timer and show text
+    if (timer=="yes") {
+        clearInterval(x);
+        document.getElementById("timer1").innerHTML=`<h3>GAME COMPLETE!</h3>`;
+        // x=countdown();
+        // return x;
+    }
 }
 
 function showPlayAgainButton() {
