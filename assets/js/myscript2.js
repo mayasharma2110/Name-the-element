@@ -35,7 +35,7 @@ let questionsEasy=[
     {question:"The primary use of ________ is for fertilizer production.",option1:"Gold (Au)",option2:"Zinc (Zn)",option3:"Sodium (Na)",option4:"Phosphorus (P)",correct:"Phosphorus (P)"},
     {question:"Your body is 3% ________ by weight. All living organisms contain this element.",option1:"Nitrogen (N)",option2:"Oxygen (O)",option3:"Hydrogen (H)",option4:"Carbon (C)",correct:"Nitrogen (N)"},
     {question:"9000 pencils lead (graphite) can be produced with the _____ found in human body.",option1:"Oxygen (O)",option2:"Calcium (Ca)",option3:"Carbon (C)",option4:"Phosphorus (P)",correct:"Carbon (C)"},
-    {question:"________ is an element found in water and toothpaste.",option1:"Carbon (C)",option2:"Gola (Au)",option3:"Fluorine (F)",option4:"Silver (Ag)",correct:"Fluorine (F)"}
+    {question:"________ is an element found in water and toothpaste.",option1:"Carbon (C)",option2:"Gold (Au)",option3:"Fluorine (F)",option4:"Silver (Ag)",correct:"Fluorine (F)"}
 ];
 
 let questionsMedium=[
