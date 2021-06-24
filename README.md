@@ -29,7 +29,6 @@ Mockups:
    * [Wireframes Comments](#wireframes-comments)
   * [Skeleton](#skeleton)
     * [Colours](#colours)
-    * [Typography](#typography)
     * [Imagery](#imagery)
   * [Surface](#surface)
 * [Features](#features)
@@ -46,8 +45,6 @@ Mockups:
   * [Online Validation](#online-validation)
   * [Lighthouse Validation](#lighthouse-validation) 
   * [User Stories from the UX Section](#user-stories-from-the-ux-section)
-  * [Fixed Bugs](#fixed-bugs)
-  * [Fixed Bugs](#fixed-bugs)
 * [Deployment](#deployment)
   * [Creation](#creation)
   * [GitHub Pages](#github-pages)
@@ -122,12 +119,12 @@ the difficulty level of the quiz they want and if they want it to be a timed qui
 
 * The home page will contain a start button for the user to start the quiz using the options they selected above.
 
+* The quiz page will clearly display what question the user is on, how many they have answered and how many are left to complete.
+
 * The quiz page will display clear feedback to the user after each question.
 
 * The quiz page will display a users score/progress in terms of a progress bar 
 with different colours to represent correct/incorrect answers.
-
-* The quiz page will clearly display what question the user is on, how many they have answered and how many are left to complete.
 
 * The quiz page will also have a buttons for the user to progress to the next question, 
 restart the current quiz questions again or to the home page and reselect the options for their quiz.
@@ -156,6 +153,8 @@ to start the current quiz questions again.
 
 At the end of the quiz the site will show how many questions the user answered, the number correct and incorrect (with percentages). 
 At this point the site will show the play again button to take the user to the home page, where they can reselect choices and play another quiz.
+
+If the user decides to have a timed quiz the timer will be shown above the progress bar.
 
 ### Skeleton
 
@@ -196,6 +195,7 @@ Please note there are a few changes to the final site since the wireframes were 
 
   * The quiz page contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
   * On a phone the restart button is below the reselct button due to limited space.
+  * On the quiz page the location of the timer was not included, in the final site this was located above the progress bar.
 
 ### Surface
 
@@ -204,8 +204,6 @@ I used the image of the periodic table of elements to get the colours used in th
 I used a muted green (#aad9b8), yellow (#fcf9bf) and red (#f7aac0) from this image using the Toggle color picker 
 within chrome developer tools. 
 For the navbar and headings text I picked navy and other text uses darkslategrey.
-
-#### Typography
 
 #### Imagery
 I picked a image of the periodic table of elements as credited in the credits - media
@@ -227,10 +225,12 @@ The user can pick if there is a timer on the quiz or not. After selecting option
 
 * The quiz page has multiple features:
   * Contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
+  * Shows the countdown for timed quizzes.
   * Shows the user what question they are on, how many they have completed and how many are left.
   * Shows the current question and its options, the order of questions is randomized.
   * Contains submit and next question buttons allowing the user to progress through the quiz questions (only one button is shown at a time).
   * After submitting an answer for each question the user is provided with feedback in text form.
+  * After submitting an answer if correct the selected/correct option is highlighted in green and if incorrect the selected option is highlighted in pink and the correct answer is highlighted in green.
   * After submitting an answer for each question the progress bar is updated showing the percentage of correct/incorrect answers so far.
   * Contains buttons allowing the user to restart the current quiz questions again or to the home page and reselect the options for their quiz.
 
@@ -262,11 +262,6 @@ this could allow the user to track their progress and also compare to others.
 
 * [GitHub](https://github.com/) - used to store the current and previous versions of the code. It was also used to host the live website through GitHub Pages. 
 
-* [Google Fonts](https://fonts.google.com/) - used to import the Roboto Slab and Montserrat font families that 
-are used throughout the website.
-
-* [Font Awesome](https://fontawesome.com/) - used to display the social media icons in the footer of each page.
-
 * [Balsamiq Wireframes](https://balsamiq.com/wireframes/) - used to create the wireframes for the website.
 
 * [Tinypng](https://tinypng.com/) - used to compress the images so they loaded quicker on the website.
@@ -280,7 +275,7 @@ are used throughout the website.
 Expected - I expected the variables I saved (taken from user input on home page), to be available to use in the quiz.
 
 Testing - I tested this by logging the varaible values to the console and commenting out the below code 
-which worked, however when the user was directed to the quiz page (below code was included out) these variables were lost.
+which worked, however when the user was directed to the quiz page (below code was not commented out) these variables were lost.
 
 > document.getElementById("user-options").submit();
 
@@ -343,30 +338,25 @@ Testing - Tested the feature by going through a quiz and checking the progress b
 
 Result - The feature acted as normally and it did update based on what number/percentage of questions are correct/incorrect.
 
-### Other 
+### Timer
 
-structure:
+Expected - Expected the timer to start at 5/10 minutes 0 seconds.
 
-Expected -Feature is expected to do X why the user does Y
+Testing - Tested the feature by loading a 5 or 10 minute quiz.
 
-Testing - Tested the feature by doing Y
+Result - The feature did not respond as expected and started at 4 minutes 58 seconds.
 
-Result - The feature did not respond due to A,B,C
-
-or
-
-Result - The feature acted as normally and it did Y
-
-Fix - I did Z to the code because something was missing
+Fix - I did ... add some text.
 
 ### Online Validation
 
-* I checked the website loads and responds as expected on Google Chrome, Microsoft Edge and Internet Explorer browsers.  
+* I checked the website loads and responds as expected on Google Chrome, and Microsoft Edge browsers. 
+I tested on Internet Explorer but the quiz did not work possibly due to the the version of Internet Explorer on my laptop being old.
 
 * Used chrome developer tools and [responsinator](https://www.responsinator.com/) to check responsiveness on mobile, tablet and laptop devices.  
 I also checked the website on my HP 15 inch laptop, Philips 20 inch monitor and Sony smartphone.
 
-* Used the [w3c validator](https://validator.w3.org/) to validate my html (for all 3 pages of the website) to check for no errors or warnings. 
+* Used the [w3c validator](https://validator.w3.org/) to validate my html (for both pages of the website) to check for no errors or warnings. 
 * Used the [jigsaw validator](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my style.css file to check for no errors or warnings. 
 I did not validate css of the whole website as this included the imported bootstrap files.
 
@@ -423,10 +413,6 @@ Full reports can be found below:
 
   * Are the same as the user goals for this project, to enjoy playing the game and learn new facts!
     * How the site acomplishes this.
-
-### Fixed Bugs
-
-#### Minor Fixes
 
 ## Deployment
 
@@ -490,7 +476,8 @@ and [zmescience](https://www.zmescience.com/science/chemistry/amazing-chemistry-
 These provided the question text and correct answer, 
 for the incorrect options I chose these myself.
 
-* I had a look at exisiting quizzes on sites to gain information on what features to include for my own quiz game: xxxxx.
+* I had a look at [Lovatts puzzles](https://lovattspuzzles.com/online-puzzles-competitions/ultimate-online-trivia-quiz/) 
+to gain information on what features to include for my own quiz game.
 
 ### Media
 
@@ -509,5 +496,4 @@ for the incorrect options I chose these myself.
 
 * Thanks to the fellow students on Slack and my friends who viewed the website and gave feedback on any improvements/changes that could be made. 
 
-* The websites that I used to gain inspiration for creating my own quiz 
-([website1](https://hall-place.com/) and [website2](http://palmers-stables.com/)).
+* The website that I used to gain inspiration for creating my own quiz: [Lovatts puzzles](https://lovattspuzzles.com/online-puzzles-competitions/ultimate-online-trivia-quiz/).
