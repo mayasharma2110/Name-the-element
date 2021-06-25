@@ -94,9 +94,8 @@ function countdown() {
         // Time calculations for days, hours, minutes and seconds
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        // console.log(seconds);
 
-        // Display the result in the element with id="demo"
+        // Display the result in the element with id="timer"
         document.getElementById("timer").innerHTML = `
         <div id="timer1">
             <h3>${minutes}m + ${seconds}s</h3>
@@ -258,7 +257,6 @@ function sumbittedAnswer(event){
     // update current question bar 
     updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
 
-
     // check answer and give feedback, also update progress bar based on userResult
     [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect] = displayFeedback(userAnswer);
 
@@ -268,6 +266,7 @@ function sumbittedAnswer(event){
             showNextQuestionButton();
     }
 
+    // IF LAST QUESTION
     if (currentQuestionNumber==number) {
         endGame();
     } 
@@ -289,7 +288,6 @@ function showNextQuestionButton(){
 
 function displayFeedback(userAnswer) {
     let userResult = userAnswer===quizQuestions[currentQuestionNumberIndex].correct;
-    // console.log(quizQuestions[currentQuestionNumberIndex].correct);
     if (userResult) {
         document.getElementById("user_feedback").innerHTML=`Well done you got it correct!`;
         // label green
@@ -353,8 +351,6 @@ function endGame() {
     if (timer=="yes") {
         clearInterval(x);
         document.getElementById("timer1").innerHTML = `<h3>GAME COMPLETE!</h3>`;
-        // x=countdown();
-        // return x;
     }
 }
 
@@ -410,6 +406,7 @@ function showSubmitButton() {
 
 // restart button
 function restartQuiz() {
+    
     // reset current question bar to question 1
     currentQuestionBar();
 

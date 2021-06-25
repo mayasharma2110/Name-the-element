@@ -6,8 +6,6 @@ function startGame(event){
     // prevent default
     event.preventDefault();
 
-    console.log("form submitted");
-
     //get user choices
     let number = parseInt($('[name="number_of_questions"]:checked')[0].value);
     let difficulty = $('[name="difficulty_level"]:checked')[0].value;
@@ -17,8 +15,6 @@ function startGame(event){
     localStorage.setItem("number", number);
     localStorage.setItem("difficulty", difficulty);
     localStorage.setItem("timer", timer);
-
-    // localStorage.setItem("lastname", "Smith");
 
     //submit form
     document.getElementById("user-options").submit();
