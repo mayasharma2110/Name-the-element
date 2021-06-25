@@ -316,9 +316,11 @@ function updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,p
     percentCorrect=percentCorrect+1/number*100;
     // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
-        <div class="progress" aria-label="You got ${percentCorrect}% correct and ${percentIncorrect}% incorrect.">
-            <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress" >
+            <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-label="You got ${percentIncorrect}% incorrect so far."
+                aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-label="You got ${percentCorrect}% correct so far."
+                aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
     // End of progress bar using bootstrap styling 
     return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
@@ -330,8 +332,10 @@ function updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect
     // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress" aria-label="You got ${percentCorrect}% correct and ${percentIncorrect}% incorrect.">
-            <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-label="You got ${percentIncorrect}% incorrect so far."
+                aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-label="You got ${percentCorrect}% correct so far."
+                aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
     // End of progress bar using bootstrap styling 
     return [numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
@@ -428,8 +432,8 @@ function restartQuiz() {
     // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
         <div class="progress" aria-label="You got 0% correct and 0% incorrect.">
-            <div class="progress-bar bg-incorrect" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-correct" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-incorrect" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Start of quiz - 0% incorrect so far."></div>
+            <div class="progress-bar bg-correct" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Start of quiz - 0% correct so far."></div>
         </div>`;
     // End of progress bar using bootstrap styling 
 
