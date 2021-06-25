@@ -201,7 +201,7 @@ Please note there are a few changes to the final site since the wireframes were 
 
 #### Colours
 I used the image of the periodic table of elements to get the colours used in this site. 
-I used a muted green (#aad9b8), yellow (#fcf9bf) and red (#f7aac0) from this image using the Toggle color picker 
+I used a muted green (#aad9b8), yellow (#fcf9bf) and red (#f7aac0) from this image using the toggle color picker 
 within chrome developer tools. 
 For the navbar and headings text I picked navy and other text uses darkslategrey.
 
@@ -360,6 +360,8 @@ I also checked the website on my HP 15 inch laptop, Philips 20 inch monitor and 
 * Used the [jigsaw validator](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my style.css file to check for no errors or warnings. 
 I did not validate css of the whole website as this included the imported bootstrap files.
 
+* Used [Jshint](https://jshint.com/) to validate my js files and ensure no warnings or errors.
+
 ### Lighthouse Validation
 
 I used [lighthouse](https://developers.google.com/web/tools/lighthouse) in chrome developer tools to check the websites performance in terms of 
@@ -472,6 +474,13 @@ on your own repository to view/edit as you wish.
 * The bootstrap library was used to help make this website responsive for different devices. 
 
 * The bootstrap library was also used to help make the progress bar in the quiz.   
+
+* The code to store and retreive variables from local storage is given and explained in the sites 
+[w3schools](https://www.w3schools.com/html/html5_webstorage.asp) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+
+* The code to randomize an array was taken from this [stackoverflow post](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array).
+
+* The code on how to select an index from an array in jQuery is given in the [jquery documentation](https://api.jquery.com/eq/).
 
 * The [w3schools site](https://www.w3schools.com/howto/howto_js_countdown.asp) helped me to create the timer for my quiz.
 
