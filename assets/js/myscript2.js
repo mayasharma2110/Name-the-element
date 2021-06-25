@@ -76,8 +76,9 @@ function countdown() {
 
     // Get today's date and time
     var now = new Date().getTime();
-    
-    var countDownDate = now + number*60000;//60000 milliseconds per minute
+
+    //60000 milliseconds per minute
+    var countDownDate = now + number*60000;
 
     // Update the count down every 1 second
     let x = setInterval(function() {
@@ -223,7 +224,7 @@ function endGameEarly() {
 
 // click on labels changes background colur
 function labelClick(){
-    // check if any other siblings with class "selected_label" if so remove class and add class "label_colour"
+    // check if any other labels with class "selected_label" if so remove class and add class "label_colour"
     for (var i = 0; i < 4; i++) {
         if ($("label").eq(i)[0].className=="selected_label") {
             $("label").eq(i).removeClass("selected_label").addClass("label_colour");

@@ -44,6 +44,7 @@ Mockups:
   * [Progress Bar](#progress-bar)
   * [Online Validation](#online-validation)
   * [Lighthouse Validation](#lighthouse-validation) 
+  * [Lighthouse Validation](#lighthouse-validation) 
   * [User Stories from the UX Section](#user-stories-from-the-ux-section)
 * [Deployment](#deployment)
   * [Creation](#creation)
