@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 // SET UP GAME
 
 // START ON QUESTION 1 OF GAME
@@ -117,6 +119,7 @@ function countdown() {
     }
 
 }
+
 // end of countdown function
 
 let quizQuestions=prepareGame();
@@ -134,7 +137,7 @@ function prepareGame() {
 
     return quizQuestions;
     
-};
+}
 
 // current question bar
 function currentQuestionBar() {
@@ -158,7 +161,7 @@ function currentQuestionBar() {
     }
     //add background color to question no 1
     $("#current_question").children().first().addClass("current_question_color");
-};
+}
 
 // get quiz questions
 function getQuizQuestions() {
@@ -175,7 +178,7 @@ function getQuizQuestions() {
         let questionsHard1 = questionsHard.sort(() => Math.random() - 0.5);//randomize order of questions
         return questionsHard1.slice(0,number); 
     }
-};
+}
 
 // display question and options
 function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNumberIndex) {
@@ -202,7 +205,7 @@ function displayQuestion(quizQuestions, currentQuestionNumber, currentQuestionNu
                 </div>
             </div>
             `;
-};
+}
 
 //end game early
 function endGameEarly() {
@@ -250,7 +253,7 @@ function sumbittedAnswer(event){
     numberAnswered++;
 
     // get user input and save as variables;
-    let userAnswer=$('[name="option"]:checked')[0].value
+    let userAnswer=$('[name="option"]:checked')[0].value;
 
     // update current question bar 
     updateCompleteQuestionBar(currentQuestionNumber,currentQuestionNumberIndex);
@@ -270,7 +273,7 @@ function sumbittedAnswer(event){
     } 
 
     return [numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
-};
+}
 
 document.getElementById("user_picks").addEventListener('submit',sumbittedAnswer);
 
@@ -365,7 +368,7 @@ function overallFeedback() {
     $("#overall_feedback").html(`
     <p>You answered ${numberAnswered} out of ${number} questions. You got ${numberCorrect} question(s) correct (${percentCorrect}%) and ${numberIncorrect} question(s) incorrect (${percentIncorrect}%).</p>
     <p>Click below to play another quiz!</p>
-    `)
+    `);
 }
 
 //USER CLICKS NEXT QUESTION
@@ -387,7 +390,7 @@ function nextQuestion(event){
     // show next submit button and hide next question button
     showSubmitButton();
 
-};
+}
 
 document.getElementById("next_question").children[0].addEventListener('click',nextQuestion);
 
@@ -440,7 +443,7 @@ function restartQuiz() {
     //reset timer
     resetTimer();
 
-    return [currentQuestionNumber,currentQuestionNumberIndex,numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect]
+    return [currentQuestionNumber,currentQuestionNumberIndex,numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 }
 
 document.getElementById("b_restart").addEventListener("click",restartQuiz);

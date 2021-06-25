@@ -44,7 +44,6 @@ Mockups:
   * [Progress Bar](#progress-bar)
   * [Online Validation](#online-validation)
   * [Lighthouse Validation](#lighthouse-validation) 
-  * [Lighthouse Validation](#lighthouse-validation) 
   * [User Stories from the UX Section](#user-stories-from-the-ux-section)
 * [Deployment](#deployment)
   * [Creation](#creation)
@@ -365,6 +364,15 @@ I did not validate css of the whole website as this included the imported bootst
 
 I used [lighthouse](https://developers.google.com/web/tools/lighthouse) in chrome developer tools to check the websites performance in terms of 
 performance, accessibility, best practises and SEO.
+This was done for both pages of the website and for both mobile and desktop devices.
+The summary table below shows these metrics.
+
+| Device | Page |  Performance | Accessibility  | Best Practises  | SEO |
+|---|---|---|---|---|---|
+| Mobile  |  Home | 84% | 100% | 100% | 100% |
+| Mobile  |  Quiz | 87% | 98% | 100% | 100% |
+| Desktop  | Home | 100% | 100% | 100% | 100% |
+| Desktop  | Quiz | 98% | 98% | 100% | 100% |
 
 Full reports can be found below:
 * [Mobile Home](assets/lighthouse/lighthouse-mobile-home.pdf)

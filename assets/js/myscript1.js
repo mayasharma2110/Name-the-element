@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 // once the form is sumbitted get user answers and log to console
 function startGame(event){
 
@@ -21,6 +23,6 @@ function startGame(event){
     //submit form
     document.getElementById("user-options").submit();
 
-};
+}
 
 document.getElementById("user-options").addEventListener('submit',startGame);
