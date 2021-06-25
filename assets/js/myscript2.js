@@ -316,7 +316,7 @@ function updateProgressBarCorrect(numberCorrect,percentCorrect,numberIncorrect,p
     percentCorrect=percentCorrect+1/number*100;
     // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
-        <div class="progress">
+        <div class="progress" aria-label="You got ${percentCorrect}% correct and ${percentIncorrect}% incorrect.">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
@@ -329,7 +329,7 @@ function updateProgressBarIncorrect(numberCorrect,percentCorrect,numberIncorrect
     percentIncorrect=percentIncorrect+1/number*100;
     // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
-        <div class="progress">
+        <div class="progress" aria-label="You got ${percentCorrect}% correct and ${percentIncorrect}% incorrect.">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: ${percentIncorrect}%" aria-valuenow="${percentIncorrect}" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: ${percentCorrect}%" aria-valuenow="${percentCorrect}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
@@ -427,7 +427,7 @@ function restartQuiz() {
     //reset progress bar
     // Progress bar using bootstrap styling 
     document.getElementById("progress_bar").innerHTML=`
-        <div class="progress">
+        <div class="progress" aria-label="You got 0% correct and 0% incorrect.">
             <div class="progress-bar bg-incorrect" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             <div class="progress-bar bg-correct" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>`;
