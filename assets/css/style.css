@@ -201,6 +201,7 @@ body {
 
 #question_text {
     height: 72px;
+    margin-bottom: 0.5rem;
 }
 
 /* overall feedback */
