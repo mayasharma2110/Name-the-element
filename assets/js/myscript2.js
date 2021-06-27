@@ -80,7 +80,7 @@ function countdown() {
     var now = new Date().getTime();
 
     //60000 milliseconds per minute
-    var countDownDate = now + 0.1*60000;
+    var countDownDate = now + number*60000;
 
     // Update the count down every 1 second
     let x = setInterval(function() {

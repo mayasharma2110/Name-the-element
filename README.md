@@ -434,44 +434,50 @@ Full reports can be found below:
 
 * First Time Visitor Goals  
 
-  * As a first time user...
-    * How the site acomplishes this.
+  * As a first time user, I want the instructions to be clear for the quiz.
+    * On the home page of the site the quiz has some introduction text to tell the user what to expect and do.
 
-  * As a first time user...
-    * How the site acomplishes this.
+  * As a first time user, I want to see an example question of the quiz before I start the game.
+    * There is an example of a quiz question on the home page of the site showing a question and the response when the user is wrong.
 
-  * As a first time user...
-    * How the site acomplishes this.
-  
-  * As a first time user...
-    * How the site acomplishes this.
+  * As a first time user, I want to be provided with clear feedback of how I am progressing during the quiz and also at the end.
+    * The site provides textual feedback, in addition to highlighting of the labels to show the user if they were correct or not.
+    The site also provides a progress bar so the user knows how they are doing in general.
+
+  * As a first time user, I want to have fun playing the game and learn new facts.
+    * The site has a variety of difficulty levels for the user to select depending on their knowledge, this means a user of any ability can enjoy playing the quiz.
+
+  * As a first time user, I want to be able to from a range of difficulty levels depending on my knowledge of chemistry.
+    * There are 3 options for difficulty level on the home page of the site which the user can select from.
+
+  * As a first time user, I want to be able to start the current quiz questions again.
+    * The quiz has a reset button and will take the user back to the first question and reset the scores and progress bar. The timer will also restart if it is a timed quiz. There is also a warning below the button.
+  * As a first time user, I want to be able to go back to the home page and re-select the number of questions and/or the difficulty level.
+    * The site has a reselect button which takes the user back to the home page of the site, there is a warning below the button.
 
 * Returning Visitor Goals
 
-  * As a returning user...
-    * How the site acomplishes this.
+  * As a returning user, I want the to achieve many of the same goals as a first time visitor.
+    * As above.
 
-  * As a returning user...
-    * How the site acomplishes this.
+  * As a returning user, I want to be able to select the number of questions the quiz will give me.
+    * The site has 2 options for 5 or 10 questions in the quiz for the user to select.
 
-  * As a returning user...
-    * How the site acomplishes this.
-
-  * As a returning user...
-    * How the site acomplishes this.
+  * As a returning user, I want to be able to choose another difficulty level depending on my knowledge level of chemistry and how well I did on the quiz on my first attempt.
+    * There are 3 options for difficulty level on the home page of the site which the user can select from.
 
 * Frequent User Goals
-
-  * As a frequent user...
-    * How the site acomplishes this.
     
-  * As a frequent user...
-    * How the site acomplishes this.
+  * As a frequent user, I want to add a timer to the quiz to challenge myself further.
+    * The site has an option to add a timer to the quiz of 1 minute per question to challenge users that want extra difficulty.
+
+  * As a frequent user I want the to achieve many of the same goals as a first time visitor and a returning visitor.
+    * As above.
 
 * Business Goals
 
   * Are the same as the user goals for this project, to enjoy playing the game and learn new facts!
-    * How the site acomplishes this.
+    * As above.
 
 ## Deployment
 
