@@ -38,10 +38,14 @@ Mockups:
 * [Testing](#testing)
   * [Local Storage](#correct-answer)
   * [Randomize Array](#randomize-array)
-  * [Current question bar](#current-question-bar)
+  * [Current Question Bar](#current-question-bar)
   * [Incorrect Answer](#incorrect-answer)
   * [Correct Answer](#correct-answer)
+  * [Label Colours](#label-colours)
   * [Progress Bar](#progress-bar)
+  * [Timer](#timer)
+  * [Timer Reset](#timer-reset)
+  * [Game Complete](#game-complete)
   * [Online Validation](#online-validation)
   * [Lighthouse Validation](#lighthouse-validation) 
   * [User Stories from the UX Section](#user-stories-from-the-ux-section)
@@ -295,19 +299,26 @@ I used the below code which I found on [stackoverflow](https://stackoverflow.com
 
 > let randomizedarray = array.sort(() => Math.random() - 0.5);
 
-### Current question bar
+### Current Question Bar
 
 For the current question bar I wanted the background colours for the numbers to be responsive to what question the user was on and what questions they had completed.
-To do this I needed to target based on an index in jQuery.
+To do this I needed to target an element based on an index in jQuery.
 The offical [jQuery](https://api.jquery.com/eq/) documentation helped me do this.
 
 > $("#current_question").children().eq(currentQuestionNumberIndex).addClass("current_question_color");
 
 > $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
 
+Expected - Show the question the user is on in yellow background and the questions completed with a green background. When the user clicks submit the current question turns from yellow to green.
+When the user clicks next question the next question turns yellow.
+
+Testing - Tested the feature by going through a quiz and checking the current question bar.
+
+Result - The feature acted as normally and the background colours responded to the submit and next question buttons.
+
 ### Incorrect Answer
 
-Expected - When the user clicks on an incorrect answer I wanted the user to be told they were wrong and given the correct answer.
+Expected - When the user clicks on an incorrect answer I wanted the user to be told they were wrong and given the correct answer in text format.
 
 Testing - Tested the feature by selecting a wrong answer and submit.
 
@@ -315,7 +326,7 @@ Result - The feature acted as normally and it displayed text saying the user was
 
 ### Correct Answer
 
-Expected - When the user clicks on the correct answer I wanted the user to be told they were correct.
+Expected - When the user clicks on the correct answer I wanted the user to be told they were correct in text format.
 
 Testing - Tested the feature by selecting the correct answer and submit.
 
@@ -329,6 +340,15 @@ I updated the below code to from
 to 
 
 > input id="option1" type="radio" name="option" value="${quizQuestions[currentQuestionNumberIndex].option1}" required
+
+### Label Colours 
+
+Expected - When the user clicks to submit an answer the background colour of the selected label turns green or pink depending if the user is correct or not.
+If the user is incorrect the right answer is shown in green.
+
+Testing - Tested the feature by selecting a correct/incorrect answer on the quiz.
+
+Result - The feature acted as normally and it did update the background colour of the selected label, and of the right answer if the user was incorrect.
 
 ### Progress Bar 
 
@@ -347,6 +367,34 @@ Testing - Tested the feature by loading a 5 or 10 minute quiz.
 Result - The feature did not respond as expected and started at 4 minutes 58 seconds.
 
 Fix - I did ... add some text.
+
+### TImer Reset
+
+Expected - Timer responds to the reset button.
+
+Testing - Tested the feature by clicking reset several times during a timed quiz and checking the countdown restarted.
+
+Result - The feature acted as normally and it did reset the countdown.
+
+### Game Complete
+
+For untimed quizzes:
+
+Expected - When the user completes all questions the submit button, reselect and restart buttons are not displayed and the play again button is shown. 
+Additionally there is text below the progress bar to show how many questions the user answered, and what number/percentage were correct and incorrect.
+
+Testing - Tested the feature by going through a quiz and checking the text below the progress bar was appropriate and the correct buttons were displayed.
+
+Result - The feature acted as normally and it shows the right text and buttons.
+
+For timed quizzes: 
+
+Expected - In addition to the above for timed quizzes if the user finishes before the timer runs out the countdown stops and instead of the time "GAME COMPLETE!" is shown.
+If the user does not finish in time the text "TIME'S UP!" will show in place of the countdown.
+
+Testing - Tested the feature by going through a timed quiz and checking the countdown ended and the page shows the correct text in place.
+
+Result - The feature acted as normally and it shows the right text instead of the countdown.
 
 ### Online Validation
 
@@ -499,7 +547,7 @@ to gain information on what features to include for my own quiz game.
 
 ### Media
 
-* I found the following images online from [Science Notes](https://sciencenotes.org/): 
+* I found the following image online from [Science Notes](https://sciencenotes.org/): 
   * periodic-table-of-elements - owner Science Notes [image link here](https://sciencenotes.org/printable-periodic-table/)
  
 * The image quiz-example is a screenshot of one of the quiz questions.
