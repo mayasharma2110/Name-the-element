@@ -69,31 +69,18 @@ let questionsHard=[
 //PREPARE GAME AND SHOW 1ST QUESTION
 
 //add timer
-let x = countdown();
 
-//Attribution for countdown function: https://www.w3schools.com/howto/howto_js_countdown.asp
-function countdown() {
+//Attribution for countdown function: https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer
 
-    if (timer=="yes") {
+function countdown(duration) {
 
-    // Get today's date and time
-    var now = new Date().getTime();
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-    //60000 milliseconds per minute
-    var countDownDate = now + number*60000;
-
-    // Update the count down every 1 second
-    let x = setInterval(function() {
-
-        // Get today's date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
         // Display the result in the element with id="timer"
         document.getElementById("timer").innerHTML = `
@@ -101,24 +88,27 @@ function countdown() {
             <h3>${minutes}m + ${seconds}s</h3>
         </div>`;
 
-        // If the count down is finished, write some text
-        if (distance < 0) {
-            clearInterval(x);
+        if (--timer < 0) {
             // end the game early
             endGameEarly();
-            }
-            
-        }, 1000);
+        }
 
-        return x; 
+        // console.log(minutes);
+        // console.log(seconds);
+        // return [minutes, seconds];
 
-    } else if (timer=="no") {
-        let x=0;
-        return x;
-    }
+    }, 1000);
 
 }
 
+
+window.onload = function () {
+    if (timer=="yes") {
+        var Minutes = 60 * number,
+        display = document.getElementById('timer');
+        countdown(Minutes);
+    };
+}
 // end of countdown function
 
 let quizQuestions=prepareGame();
@@ -437,19 +427,7 @@ function restartQuiz() {
         </div>`;
     // End of progress bar using bootstrap styling 
 
-    //reset timer
-    resetTimer();
-
     return [currentQuestionNumber,currentQuestionNumberIndex,numberAnswered,numberCorrect,percentCorrect,numberIncorrect,percentIncorrect];
 }
 
 document.getElementById("b_restart").addEventListener("click",restartQuiz);
-
-function resetTimer() {
-    if (timer=="yes") {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML="";
-        x=countdown();
-        return x;
-    }
-}

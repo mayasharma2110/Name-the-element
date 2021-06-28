@@ -44,7 +44,6 @@ Mockups:
   * [Label Colours](#label-colours)
   * [Progress Bar](#progress-bar)
   * [Timer](#timer)
-  * [Timer Reset](#timer-reset)
   * [Game Complete](#game-complete)
   * [Online Validation](#online-validation)
   * [Lighthouse Validation](#lighthouse-validation) 
@@ -310,8 +309,9 @@ The offical [jQuery](https://api.jquery.com/eq/) documentation helped me do this
 > $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
 
 Expected - Show the question the user is on in yellow background and the questions completed with a blue background. 
-Previously this was green when completed but caused confusion to users as it is not related to which questions are answered right and wrong. 
-When the user clicks submit the current question turns from yellow to green.
+Previously this was green when completed but caused confusion to users as it is not related to which questions are 
+answered right and wrong. 
+When the user clicks submit the current question turns from yellow to blue.
 When the user clicks next question the next question turns yellow.
 
 Testing - Tested the feature by going through a quiz and checking the current question bar.
@@ -366,17 +366,12 @@ Expected - Expected the timer to start at 5/10 minutes 0 seconds.
 
 Testing - Tested the feature by loading a 5 or 10 minute quiz.
 
-Result - The feature did not respond as expected and started at 4 minutes 58 seconds.
+Result - The feature did not respond as expected and started at 4/9 minutes 58 seconds.
 
-Fix - I did ... add some text.
-
-### TImer Reset
-
-Expected - Timer responds to the reset button.
-
-Testing - Tested the feature by clicking reset several times during a timed quiz and checking the countdown restarted.
-
-Result - The feature acted as normally and it did reset the countdown.
+Fix - I used and modified simplified code from the site 
+[codegrepper](https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer) rather than the 
+code at [w3schools](https://www.w3schools.com/howto/howto_js_countdown.asp), 
+since we know how many minutes we want the countdown to be and getting the date every second is a waste of processing power.
 
 ### Game Complete
 
@@ -453,7 +448,7 @@ Full reports can be found below:
     * There are 3 options for difficulty level on the home page of the site which the user can select from.
 
   * As a first time user, I want to be able to start the current quiz questions again.
-    * The quiz has a reset button and will take the user back to the first question and reset the scores and progress bar. The timer will also restart if it is a timed quiz. There is also a warning below the button.
+    * The quiz has a reset button and will take the user back to the first question and reset the scores and progress bar. The timer will not restart if it is a timed quiz. There is also a warning below the button.
   * As a first time user, I want to be able to go back to the home page and re-select the number of questions and/or the difficulty level.
     * The site has a reselect button which takes the user back to the home page of the site, there is a warning below the button.
 
@@ -538,7 +533,8 @@ on your own repository to view/edit as you wish.
 
 * The code on how to select an index from an array in jQuery is given in the [jquery documentation](https://api.jquery.com/eq/).
 
-* The [w3schools site](https://www.w3schools.com/howto/howto_js_countdown.asp) helped me to create the timer for my quiz.
+* The [w3schools](https://www.w3schools.com/howto/howto_js_countdown.asp) and 
+[codegrepper](https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer) sites helped me to create the timer for my quiz.
 
 ### Content
 
