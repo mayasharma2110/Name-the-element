@@ -309,7 +309,9 @@ The offical [jQuery](https://api.jquery.com/eq/) documentation helped me do this
 
 > $("#current_question").children().eq(currentQuestionNumberIndex).removeClass("current_question_color").addClass("completed_question_color");
 
-Expected - Show the question the user is on in yellow background and the questions completed with a green background. When the user clicks submit the current question turns from yellow to green.
+Expected - Show the question the user is on in yellow background and the questions completed with a blue background. 
+Previously this was green when completed but caused confusion to users as it is not related to which questions are answered right and wrong. 
+When the user clicks submit the current question turns from yellow to green.
 When the user clicks next question the next question turns yellow.
 
 Testing - Tested the feature by going through a quiz and checking the current question bar.
