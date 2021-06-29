@@ -372,6 +372,7 @@ Fix - I used and modified simplified code from the site
 [codegrepper](https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer) rather than the 
 code at [w3schools](https://www.w3schools.com/howto/howto_js_countdown.asp), 
 since we know how many minutes we want the countdown to be and getting the date every second is a waste of processing power.
+This solved the problem.
 
 ### Game Complete
 
