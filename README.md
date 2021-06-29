@@ -374,6 +374,9 @@ code at [w3schools](https://www.w3schools.com/howto/howto_js_countdown.asp),
 since we know how many minutes we want the countdown to be and getting the date every second is a waste of processing power.
 This solved the problem.
 
+However this caused a new issue as I did not know how to stop the countdown using the method from [codegrepper](https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer), 
+so I opted to hide the countdown once the game is completed or time is up.
+
 ### Game Complete
 
 For untimed quizzes:
@@ -387,12 +390,11 @@ Result - The feature acted as normally and it shows the right text and buttons.
 
 For timed quizzes: 
 
-Expected - In addition to the above for timed quizzes if the user finishes before the timer runs out the countdown stops and instead of the time "GAME COMPLETE!" is shown.
-If the user does not finish in time the text "TIME'S UP!" will show in place of the countdown.
+Expected - In addition to the above for timed quizzes if the user finishes before the timer runs out or completes the quiz the countdown is hidden.
 
-Testing - Tested the feature by going through a timed quiz and checking the countdown ended and the page shows the correct text in place.
+Testing - Tested the feature by going through a timed quiz and checking the countdown is hidden.
 
-Result - The feature acted as normally and it shows the right text instead of the countdown.
+Result - The feature acted as normally and it hides the countdown.
 
 ### Online Validation
 

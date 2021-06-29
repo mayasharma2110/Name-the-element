@@ -72,7 +72,7 @@ let questionsHard=[
 
 //Attribution for countdown function: https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer
 
-function countdown(duration) {
+function countdown(duration, display) {
 
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -83,19 +83,15 @@ function countdown(duration) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         // Display the result in the element with id="timer"
-        document.getElementById("timer").innerHTML = `
+        display.innerHTML = `
         <div id="timer1">
             <h3>${minutes}m + ${seconds}s</h3>
-        </div>`;
+        </div>`;        
 
         if (--timer < 0) {
             // end the game early
             endGameEarly();
         }
-
-        // console.log(minutes);
-        // console.log(seconds);
-        // return [minutes, seconds];
 
     }, 1000);
 
@@ -104,11 +100,12 @@ function countdown(duration) {
 
 window.onload = function () {
     if (timer=="yes") {
-        var Minutes = 60 * number,
-        display = document.getElementById('timer');
-        countdown(Minutes);
-    };
-}
+        var Minutes1 = 60 * number,
+        display = document.querySelector('#timer');
+        countdown(Minutes1, display);
+    }
+};
+
 // end of countdown function
 
 let quizQuestions=prepareGame();
@@ -208,7 +205,8 @@ function endGameEarly() {
     } else if ($("#submit_answer")[0].className=="show") {
         $("#submit_answer").removeClass("show").addClass("hide"); 
     }
-    document.getElementById("timer1").innerHTML = `<h3>TIME'S UP!</h3>`;
+    // hide timer
+    $("#timer").addClass("hide");
     // display overall feedback to user
     overallFeedback();
 }
@@ -220,7 +218,6 @@ function labelClick(){
     for (var i = 0; i < 4; i++) {
         if ($("label").eq(i)[0].className=="selected_label") {
             $("label").eq(i).removeClass("selected_label").addClass("label_colour");
-            break;
         }
     }
     $(this).prev().trigger("click");
@@ -288,7 +285,7 @@ function displayFeedback(userAnswer) {
         document.getElementById("user_feedback").innerHTML=`Sorry you got it wrong, the correct answer is ${quizQuestions[currentQuestionNumberIndex].correct}.`;
         // label red
         $('[name="option"]:checked').next().removeClass("selected_label").addClass("incorrect");
-        // show correct ans in green
+        // show correct answer in green
         for (var i = 0; i < 4; i++) {
             if ($('[name="option"]')[i].value==quizQuestions[currentQuestionNumberIndex].correct) {
             // console.log(i);
@@ -337,10 +334,10 @@ function endGame() {
     showPlayAgainButton();
     // display overall feedback to user
     overallFeedback();
-    // if timer stop timer and show text
+    // if timer hide timer
     if (timer=="yes") {
-        clearInterval(x);
-        document.getElementById("timer1").innerHTML = `<h3>GAME COMPLETE!</h3>`;
+        timer = 0;
+        $("#timer").addClass("hide");
     }
 }
 
