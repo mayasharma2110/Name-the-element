@@ -256,7 +256,9 @@ this could allow the user to track their progress and also compare to others.
 
 * CSS - used to add style and colour to the content.
 
-* Javascript - used to make responsive to the user's input.
+* Javascript - used to help make the site responsive to the user's input.
+
+* jQuery - used to help make the site responsive to the user's input.
 
 * [Bootstrap Version 4.1.3](https://getbootstrap.com/docs/4.1/getting-started/download/)
   * Used grid layout to ensure the content was responsive to different device sizes (mobile, tablet and laptop).
@@ -419,9 +421,9 @@ The summary table below shows these metrics.
 
 | Device | Page |  Performance | Accessibility  | Best Practises  | SEO |
 |---|---|---|---|---|---|
-| Mobile  |  Home | 84% | 100% | 100% | 100% |
-| Mobile  |  Quiz | 87% | 98% | 100% | 100% |
-| Desktop  | Home | 100% | 100% | 100% | 100% |
+| Mobile  |  Home | 91% | 100% | 100% | 97% |
+| Mobile  |  Quiz | 86% | 98% | 100% | 100% |
+| Desktop  | Home | 99% | 100% | 100% | 100% |
 | Desktop  | Quiz | 98% | 98% | 100% | 100% |
 
 Full reports can be found below:
