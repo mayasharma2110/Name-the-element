@@ -198,7 +198,7 @@ Please note there are a few changes to the final site since the wireframes were 
 
   * The quiz page contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
   * On a phone the restart button is below the reselect button due to limited space.
-  * On the quiz page the location of the timer was not included, in the final site this was located above the progress bar.
+  * On the quiz page the location of the timer was not included, in the final site this was located above the current question bar.
 
 ### Surface
 
