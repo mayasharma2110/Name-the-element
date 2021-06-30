@@ -117,7 +117,7 @@ Key features to be included based on user stories are:
 
 * The home page will show an image example of a question and the multiple choice options for the user to choose from.
 
-* The home page will contain radio buttons for the user to select how many question they want their quiz to contain, 
+* The home page will contain radio buttons for the user to select how many questions they want their quiz to contain, 
 the difficulty level of the quiz they want and if they want it to be a timed quiz or not.
 
 * The home page will contain a start button for the user to start the quiz using the options they selected above.
@@ -129,7 +129,7 @@ the difficulty level of the quiz they want and if they want it to be a timed qui
 * The quiz page will display a users score/progress in terms of a progress bar 
 with different colours to represent correct/incorrect answers.
 
-* The quiz page will also have a buttons for the user to progress to the next question, 
+* The quiz page will also have a button for the user to progress to the next question, 
 restart the current quiz questions again or to the home page and reselect the options for their quiz.
 
 * At the end of the quiz the user will be presented with how many questions they answered, the number of questions correct and incorrect (with percentages).
@@ -149,9 +149,9 @@ At the bottom there will be a start quiz button.
 The quiz page will contain a bar showing the question the user is currently on, how many have been completed and how many are left to complete.
 Below this will be the question along with 4 multiple choice options, and below a submit button. 
 Below the submit button is where user feedback will be displayed if they answered correctly or not. 
-Once the user has clicked submit this button will disappear and there will be a next question button in it's place.
+Once the user has clicked submit this button will disappear and there will be a next question button in its place.
 Below any feedback will be the progress bar showing the percentage of correct and incorrect answers.
-Finally at the bottom there will be 2 buttons to allow the user to reselect their quiz options (go to the home page) or
+Finally, at the bottom there will be 2 buttons to allow the user to reselect their quiz options (go to the home page) or
 to start the current quiz questions again.
 
 At the end of the quiz the site will show how many questions the user answered, the number correct and incorrect (with percentages). 
@@ -209,9 +209,9 @@ within chrome developer tools.
 For the navbar and headings text I picked navy and other text uses darkslategrey.
 
 #### Imagery
-I picked a image of the periodic table of elements as credited in the credits - media
+I picked an image of the periodic table of elements as credited in the credits - media
 section of this readme. The site mentioned has many images available but 
-I picked this as it is colourful, it is also has muted colours which makes this 
+I picked this as it is colourful, it also has muted colours which makes this 
 a website that a user of any age would like to use. 
 
 ## Features
@@ -224,7 +224,7 @@ a website that a user of any age would like to use.
 This makes the purpose of the site clear to the user and lets them know what to expect.
 
 * On the home page the user can pick number of questions and difficulty level.
-The user can pick if there is a timer on the quiz or not. After selecting options the user can start the quiz.
+The user can pick if there is a timer on the quiz or not. After selecting options, the user can start the quiz.
 
 * The quiz page has multiple features:
   * Contains the image of the periodic table of elements from the home page, this gives users a reference when answering the questions.
@@ -302,7 +302,7 @@ I used the below code which I found on [stackoverflow](https://stackoverflow.com
 
 ### Current Question Bar
 
-For the current question bar I wanted the background colours for the numbers to be responsive to what question the user was on and what questions they had completed.
+For the current question bar, I wanted the background colours for the numbers to be responsive to what question the user was on and what questions they had completed.
 To do this I needed to target an element based on an index in jQuery.
 The offical [jQuery](https://api.jquery.com/eq/) documentation helped me do this.
 
@@ -314,7 +314,7 @@ Expected - Show the question the user is on in yellow background and the questio
 Previously this was green when completed but caused confusion to users as it is not related to which questions are 
 answered right and wrong. 
 When the user clicks submit the current question turns from yellow to blue.
-When the user clicks next question the next question turns yellow.
+When the user clicks next question, the next question turns yellow.
 
 Testing - Tested the feature by going through a quiz and checking the current question bar.
 
@@ -322,7 +322,7 @@ Result - The feature acted as normally and the background colours responded to t
 
 ### Incorrect Answer
 
-Expected - When the user clicks on an incorrect answer I wanted the user to be told they were wrong and given the correct answer in text format.
+Expected - When the user clicks on an incorrect answer, I wanted the user to be told they were wrong and given the correct answer in text format.
 
 Testing - Tested the feature by selecting a wrong answer and submit.
 
@@ -330,7 +330,7 @@ Result - The feature acted as normally and it displayed text saying the user was
 
 ### Correct Answer
 
-Expected - When the user clicks on the correct answer I wanted the user to be told they were correct in text format.
+Expected - When the user clicks on the correct answer, I wanted the user to be told they were correct in text format.
 
 Testing - Tested the feature by selecting the correct answer and submit.
 
@@ -376,7 +376,7 @@ code at [w3schools](https://www.w3schools.com/howto/howto_js_countdown.asp),
 since we know how many minutes we want the countdown to be and getting the date every second is a waste of processing power.
 This solved the problem.
 
-However this caused a new issue as I did not know how to stop the countdown using the method from [codegrepper](https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer), 
+However, this caused a new issue as I did not know how to stop the countdown using the method from [codegrepper](https://www.codegrepper.com/code-examples/javascript/javascript+create+countdown+timer), 
 so I opted to hide the countdown once the game is completed or time is up.
 
 ### Game Complete
@@ -384,7 +384,7 @@ so I opted to hide the countdown once the game is completed or time is up.
 For untimed quizzes:
 
 Expected - When the user completes all questions the submit button, reselect and restart buttons are not displayed and the play again button is shown. 
-Additionally there is text below the progress bar to show how many questions the user answered, and what number/percentage were correct and incorrect.
+Additionally, there is text below the progress bar to show how many questions the user answered, and what number/percentage were correct and incorrect.
 
 Testing - Tested the feature by going through a quiz and checking the text below the progress bar was appropriate and the correct buttons were displayed.
 
